@@ -39,6 +39,9 @@
           text-shadow: $text-shadow;
         }
       }
+      li:last-child {
+        margin-right: 80px;
+      }
     }
   }
 }
