@@ -16,12 +16,9 @@ import BaseButton from '@/components/BaseButton.vue'
         <div class="home__hero__picture">
           <img src="/src/assets/moje zdjecie.png" />
           <div class="home__hero__picture__icons-wrapper">
-            <span class="material-symbols-outlined"> database </span>
-            <span class="material-symbols-outlined"> manufacturing </span>
-            <span class="material-symbols-outlined"> terminal </span>
-            <span class="material-symbols-outlined"> network_node </span>
-            <span class="material-symbols-outlined"> auto_transmission </span>
-            <span class="material-symbols-outlined"> storage </span>
+            <span class="material-symbols-outlined database"> database </span>
+            <span class="material-symbols-outlined gears"> manufacturing </span>
+            <span class="material-symbols-outlined terminal"> terminal </span>
           </div>
         </div>
       </section>
@@ -34,19 +31,20 @@ import BaseButton from '@/components/BaseButton.vue'
   &__hero {
     position: relative;
     display: flex;
-    gap: 150px;
+    justify-content: space-between;
+    width: 100%;
 
     &__text {
-      width: max-content;
+      width: min-content;
       display: flex;
       flex-direction: column;
       padding: 80px 0;
 
       &--title {
-        margin-bottom: 48px;
-        font-size: 4.5rem;
-        font-weight: 800;
         font-family: $font-title;
+        margin-bottom: 48px;
+        font-size: 4rem;
+        font-weight: 800;
         line-height: 120%;
         background: $text-gradient;
         background-clip: text;
@@ -54,7 +52,7 @@ import BaseButton from '@/components/BaseButton.vue'
       }
 
       &--subtitle {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
         line-height: 120%;
         margin-bottom: 80px;
       }
@@ -62,7 +60,7 @@ import BaseButton from '@/components/BaseButton.vue'
 
     &__picture {
       position: relative;
-      min-width: 30%;
+      width: 40%;
 
       img {
         height: 100%;
@@ -77,39 +75,24 @@ import BaseButton from '@/components/BaseButton.vue'
 
         span {
           position: absolute;
-          font-size: 4rem;
+          font-size: 3.2rem;
           color: $color-accent;
           text-shadow: $text-shadow;
         }
 
-        span:first-child {
-          left: -40px;
+        .database {
+          left: -50px;
           top: 130px;
         }
 
-        span:nth-child(2) {
-          left: 0;
-          top: 300px;
+        .gears {
+          left: 30px;
+          top: 220px;
         }
 
-        span:nth-child(3) {
-          left: 80px;
-          top: 0;
-        }
-
-        span:nth-child(4) {
-          left: 450px;
-          top: 100px;
-        }
-
-        span:nth-child(5) {
-          left: 470px;
-          top: 410px;
-        }
-
-        span:last-child {
-          left: 550px;
-          top: 250px;
+        .terminal {
+          left: 30px;
+          top: 40px;
         }
       }
     }

@@ -1,19 +1,9 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 
-// type Size = 'small' | 'regular' | 'large'
-// type Color = 'orange' | 'green' | 'dark-green' | 'red' | 'yellow'
-// type ButtonType = 'button' | 'submit' | 'reset'
-
 interface Props {
   to?: string
   href?: string
-  // size?: Size
-  // color?: Color
-  // type: ButtonType
-  // outlined?: boolean
-  // disabled?: boolean
-  // fullWidth?: boolean
 }
 
 const props = defineProps<Props>()
@@ -32,10 +22,7 @@ const componentVariant = computed(() => {
 <template>
   <component class="base-button" :is="componentVariant" :href="href || to" :to="to">
     <div class="base-button__slot">
-      <slot>
-        <!-- fallback content -->
-        Click me
-      </slot>
+      <slot> </slot>
     </div>
   </component>
 </template>
@@ -45,7 +32,7 @@ const componentVariant = computed(() => {
   padding: 14px 24px;
   background-color: inherit;
   font-family: $font-main;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: 600;
   background-color: $color-accent;
   color: inherit;

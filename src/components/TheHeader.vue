@@ -20,13 +20,12 @@
   justify-content: space-between;
 
   &__logo {
-    max-width: 500px;
-    margin-top: -80px;
-    margin-left: -76px;
+    max-width: 400px;
+    margin-top: -55px;
   }
 
   &__nav {
-    font-size: 1.4rem;
+    font-size: 1.1rem;
     ul {
       display: flex;
       padding: 56px 0;
@@ -39,10 +38,6 @@
           color: $color-accent;
           text-shadow: $text-shadow;
         }
-      }
-
-      li:last-child {
-        //  padding-right: 200px;
       }
     }
   }
