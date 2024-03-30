@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+$font-title: Montserrat, sans-serif;
+
+$font-main: 'Source Code Pro', sans-serif;
+
+$color-background: #151f21;
+$color-accent: #38bcd6;
+$color-text: #fff;
+
+$background-gradient: linear-gradient(
+  180deg,
+  hsl(190deg 22% 11%) 0%,
+  hsl(190deg 22% 11%) 21%,
+  hsl(190deg 23% 12%) 30%,
+  hsl(190deg 23% 12%) 39%,
+  hsl(190deg 23% 13%) 46%,
+  hsl(190deg 23% 13%) 54%,
+  hsl(190deg 24% 14%) 61%,
+  hsl(190deg 24% 14%) 69%,
+  hsl(190deg 24% 15%) 79%,
+  hsl(189deg 24% 15%) 100%
+);
+
+$text-gradient: linear-gradient(
+  180deg,
+  hsl(0deg 0% 100%) 0%,
+  hsl(193deg 60% 96%) 21%,
+  hsl(193deg 60% 91%) 30%,
+  hsl(193deg 60% 87%) 39%,
+  hsl(192deg 60% 82%) 46%,
+  hsl(192deg 61% 77%) 54%,
+  hsl(192deg 62% 72%) 61%,
+  hsl(191deg 62% 67%) 69%,
+  hsl(191deg 64% 61%) 79%,
+  hsl(190deg 66% 53%) 100%
+);
+
+$text-shadow: $color-accent 1px 0 10px;
+
+$box-shadow: $color-accent 1px 0 10px;
