@@ -105,12 +105,12 @@ import BaseButton from '@/components/BaseButton.vue'
         }
         .analytics {
           left: 490px;
-          top: 230px;
+          top: 220px;
         }
 
         .table {
           left: 420px;
-          top: 320px;
+          top: 310px;
         }
       }
     }
