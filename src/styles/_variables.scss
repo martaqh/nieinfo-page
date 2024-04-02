@@ -6,8 +6,11 @@ $font-title: Montserrat, sans-serif;
 $font-main: 'Source Code Pro', sans-serif;
 
 $color-background: #151f21;
+
 $color-accent: #38bcd6;
 $color-text: #fff;
+$color-text-light: #c2cfd1;
+$color-text-reverse: $color-background;
 
 $background-gradient: linear-gradient(
   180deg,
@@ -40,3 +43,19 @@ $text-gradient: linear-gradient(
 $text-shadow: $color-accent 1px 0 10px;
 
 $box-shadow: $color-accent 1px 0 10px;
+
+$border-radius: 8px;
+
+$divider-gradient: linear-gradient(
+  90deg,
+  hsl(190deg 22% 11%) 0%,
+  hsl(190deg 14% 17%) 34%,
+  hsl(190deg 11% 24%) 51%,
+  hsl(189deg 8% 31%) 63%,
+  hsl(189deg 7% 38%) 74%,
+  hsl(189deg 6% 46%) 82%,
+  hsl(189deg 6% 54%) 89%,
+  hsl(189deg 8% 62%) 94%,
+  hsl(188deg 10% 71%) 98%,
+  hsl(188deg 14% 79%) 100%
+);

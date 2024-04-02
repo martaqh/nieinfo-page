@@ -25,6 +25,35 @@ import BaseButton from '@/components/BaseButton.vue'
           </div>
         </div>
       </section>
+      <div class="home__divider"></div>
+      <section class="home__bonuses">
+        <div class="home__bonuses__ebook">
+          <img class="home__bonuses__ebook__image" src="/src/assets/ecover.png" />
+          <div class="home__bonuses__ebook__text">
+            <h6>#bonus 1</h6>
+            <h2>Ebook dla początkujących</h2>
+            <p>
+              Chcesz zostać programistą baz danych, ale informatyka to dla Ciebie zupełna nowość?
+              <br />
+              Jeśli myślisz o przebranżowieniu do IT, to ten e-book BARDZO CI SIĘ SPODOBA!
+            </p>
+            <BaseButton>Pobierz ebook</BaseButton>
+          </div>
+        </div>
+        <div class="home__bonuses__ebook reverse">
+          <img class="home__bonuses__ebook__image" src="/src/assets/BONUS_LEAD_MAGNET.png" />
+          <div class="home__bonuses__ebook__text">
+            <h6>#bonus 2</h6>
+            <h2>Poradnik dla programistów PL/SQL</h2>
+            <p>
+              Jeśli chcesz poprawić wydajność i jakość Twoich aplikacji w bazie danych Oracle, to
+              koniecznie sięgnij po ten poradnik. Dzięki niemu poznasz 7 najczęstszych błędów
+              programistów PL/SQL wraz z analizą kodu i zaleceniami.
+            </p>
+            <BaseButton>Pobierz poradnik</BaseButton>
+          </div>
+        </div>
+      </section>
     </div>
   </BasePage>
 </template>
@@ -36,12 +65,13 @@ import BaseButton from '@/components/BaseButton.vue'
     display: flex;
     justify-content: space-between;
     width: 100%;
+    padding: 0 48px;
 
     &__text {
       width: min-content;
       display: flex;
       flex-direction: column;
-      padding: 80px 0;
+      padding: 120px 0;
 
       &--title {
         font-family: $font-title;
@@ -64,6 +94,7 @@ import BaseButton from '@/components/BaseButton.vue'
     &__picture {
       position: relative;
       width: 40%;
+      max-height: 70%;
 
       img {
         height: 100%;
@@ -112,6 +143,61 @@ import BaseButton from '@/components/BaseButton.vue'
           left: 420px;
           top: 310px;
         }
+      }
+    }
+  }
+
+  &__divider {
+    margin: 0 -100px;
+    height: 1px;
+    border-radius: $border-radius;
+    background-image: $divider-gradient;
+  }
+
+  &__bonuses {
+    padding: 80px 48px;
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+
+    &__ebook {
+      margin: 80px 24px;
+      display: flex;
+      justify-content: space-between;
+      gap: 64px;
+
+      &__image {
+        max-height: 550px;
+      }
+
+      &__text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 48px;
+        line-height: 150%;
+
+        h6 {
+          font-size: 2rem;
+          font-weight: 200;
+          color: $color-text-light;
+        }
+
+        h2 {
+          font-family: $font-title;
+          font-size: 2rem;
+          font-weight: 600;
+          line-height: 120%;
+        }
+
+        p {
+          margin: 24px 0;
+          font-size: 1rem;
+        }
+      }
+      &.reverse {
+        display: flex;
+        flex-direction: row-reverse;
       }
     }
   }

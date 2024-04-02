@@ -37,7 +37,7 @@ const componentVariant = computed(() => {
   background-color: $color-accent;
   color: inherit;
   border: 2px solid $color-accent;
-  border-radius: 8px;
+  border-radius: $border-radius;
 
   &:hover {
     outline: 2px solid $color-accent;
