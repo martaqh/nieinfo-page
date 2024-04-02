@@ -8,7 +8,7 @@ import BaseButton from '@/components/BaseButton.vue'
     <div class="home">
       <section class="home__hero">
         <div class="home__hero__text">
-          <h1 class="home__hero__text--title">Naucz się programować <span>bazy danych</span></h1>
+          <h1 class="home__hero__text--title">Naucz się programowania <span>baz danych</span></h1>
           <p class="home__hero__text--subtitle">Od zera do poziomu zaawansowanego</p>
 
           <BaseButton> Pobierz darmowe ebooki </BaseButton>
@@ -19,6 +19,9 @@ import BaseButton from '@/components/BaseButton.vue'
             <span class="material-symbols-outlined database"> database </span>
             <span class="material-symbols-outlined gears"> manufacturing </span>
             <span class="material-symbols-outlined terminal"> terminal </span>
+            <span class="material-symbols-outlined analytics"> analytics </span>
+            <span class="material-symbols-outlined node"> network_node </span>
+            <span class="material-symbols-outlined table"> data_table </span>
           </div>
         </div>
       </section>
@@ -75,24 +78,39 @@ import BaseButton from '@/components/BaseButton.vue'
 
         span {
           position: absolute;
-          font-size: 3.2rem;
+          font-size: 3rem;
+          font-weight: 300;
           color: $color-accent;
           text-shadow: $text-shadow;
         }
 
         .database {
-          left: -50px;
+          left: -40px;
           top: 130px;
         }
 
         .gears {
-          left: 30px;
-          top: 220px;
+          left: 420px;
+          top: 130px;
         }
 
         .terminal {
           left: 30px;
           top: 40px;
+        }
+
+        .node {
+          left: 30px;
+          top: 220px;
+        }
+        .analytics {
+          left: 490px;
+          top: 230px;
+        }
+
+        .table {
+          left: 420px;
+          top: 320px;
         }
       }
     }
