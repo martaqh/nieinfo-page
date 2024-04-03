@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import BasePage from '@/pages/BasePage.vue'
 import BaseButton from '@/components/BaseButton.vue'
+import BaseDivider from '@/components/BaseDivider.vue'
 </script>
 
 <template>
@@ -25,7 +26,7 @@ import BaseButton from '@/components/BaseButton.vue'
           </div>
         </div>
       </section>
-      <div class="home__divider"></div>
+      <BaseDivider />
       <section class="home__bonuses">
         <div class="home__bonuses__ebook">
           <img class="home__bonuses__ebook__image" src="/src/assets/ecover.png" />
@@ -56,6 +57,7 @@ import BaseButton from '@/components/BaseButton.vue'
           </div>
         </div>
       </section>
+      <BaseDivider reverse />
     </div>
   </BasePage>
 </template>
@@ -147,13 +149,6 @@ import BaseButton from '@/components/BaseButton.vue'
         }
       }
     }
-  }
-
-  &__divider {
-    margin: 0 -100px;
-    height: 1px;
-    border-radius: $border-radius;
-    background-image: $divider-gradient;
   }
 
   &__bonuses {

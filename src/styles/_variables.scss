@@ -49,13 +49,27 @@ $border-radius: 8px;
 $divider-gradient: linear-gradient(
   90deg,
   hsl(190deg 22% 11%) 0%,
-  hsl(190deg 14% 17%) 34%,
-  hsl(190deg 11% 24%) 51%,
-  hsl(189deg 8% 31%) 63%,
-  hsl(189deg 7% 38%) 74%,
-  hsl(189deg 6% 46%) 82%,
-  hsl(189deg 6% 54%) 89%,
-  hsl(189deg 8% 62%) 94%,
+  hsl(190deg 14% 17%) 47%,
+  hsl(190deg 11% 24%) 68%,
+  hsl(189deg 8% 31%) 80%,
+  hsl(189deg 7% 38%) 87%,
+  hsl(189deg 6% 46%) 92%,
+  hsl(189deg 6% 54%) 94%,
+  hsl(189deg 8% 62%) 96%,
+  hsl(188deg 10% 71%) 98%,
+  hsl(188deg 14% 79%) 100%
+);
+
+$divider-gradient-reverse: linear-gradient(
+  270deg,
+  hsl(190deg 22% 11%) 0%,
+  hsl(190deg 14% 17%) 47%,
+  hsl(190deg 11% 24%) 68%,
+  hsl(189deg 8% 31%) 80%,
+  hsl(189deg 7% 38%) 87%,
+  hsl(189deg 6% 46%) 92%,
+  hsl(189deg 6% 54%) 94%,
+  hsl(189deg 8% 62%) 96%,
   hsl(188deg 10% 71%) 98%,
   hsl(188deg 14% 79%) 100%
 );
