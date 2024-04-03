@@ -35,7 +35,8 @@ import BaseButton from '@/components/BaseButton.vue'
             <p>
               Chcesz zostać programistą baz danych, ale informatyka to dla Ciebie zupełna nowość?
               <br />
-              Jeśli myślisz o przebranżowieniu do IT, to ten e-book BARDZO CI SIĘ SPODOBA!
+              Jeśli myślisz o przebranżowieniu do IT, to ten e-book jest
+              <strong> właśnie dla Ciebie!</strong>
             </p>
             <BaseButton>Pobierz ebook</BaseButton>
           </div>
@@ -47,7 +48,8 @@ import BaseButton from '@/components/BaseButton.vue'
             <h2>Poradnik dla programistów PL/SQL</h2>
             <p>
               Jeśli chcesz poprawić wydajność i jakość Twoich aplikacji w bazie danych Oracle, to
-              koniecznie sięgnij po ten poradnik. Dzięki niemu poznasz 7 najczęstszych błędów
+              koniecznie sięgnij po ten poradnik. Dzięki niemu poznasz
+              <strong>SIEDEM&nbsp;najczęstszych błędów</strong>
               programistów PL/SQL wraz z analizą kodu i zaleceniami.
             </p>
             <BaseButton>Pobierz poradnik</BaseButton>
@@ -161,16 +163,20 @@ import BaseButton from '@/components/BaseButton.vue'
     gap: 48px;
 
     &__ebook {
-      margin: 80px 24px;
+      margin: 80px;
       display: flex;
       justify-content: space-between;
-      gap: 64px;
+      gap: 120px;
+      height: fit-content;
 
       &__image {
-        max-height: 550px;
+        max-width: 500px;
+        object-fit: cover;
+        overflow: hidden;
       }
 
       &__text {
+        min-width: 50%;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -192,7 +198,14 @@ import BaseButton from '@/components/BaseButton.vue'
 
         p {
           margin: 24px 0;
-          font-size: 1rem;
+          font-size: 1.1rem;
+          font-weight: 300;
+          line-height: 150%;
+
+          strong {
+            text-transform: uppercase;
+            font-weight: 700;
+          }
         }
       }
       &.reverse {
