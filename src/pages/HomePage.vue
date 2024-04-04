@@ -39,7 +39,7 @@ import BaseDivider from '@/components/BaseDivider.vue'
               Jeśli myślisz o przebranżowieniu do IT, to ten e-book jest
               <strong> właśnie dla Ciebie!</strong>
             </p>
-            <BaseButton>Pobierz ebook</BaseButton>
+            <BaseButton href="https://promo.podstawybazdanych.pl/">Pobierz ebook</BaseButton>
           </div>
         </div>
 
@@ -54,7 +54,7 @@ import BaseDivider from '@/components/BaseDivider.vue'
               <strong>SIEDEM&nbsp;najczęstszych błędów</strong>
               programistów PL/SQL wraz z analizą kodu i zaleceniami.
             </p>
-            <BaseButton>Pobierz poradnik</BaseButton>
+            <BaseButton href="https://promo.plsql.pl/">Pobierz poradnik</BaseButton>
           </div>
         </div>
       </section>

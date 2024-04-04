@@ -4,7 +4,10 @@ import BaseDivider from '@/components/BaseDivider.vue'
 
 <template>
   <header class="header">
-    <img class="header__logo" src="/src/assets/logo.svg" />
+    <RouterLink to="/">
+      <img class="header__logo" src="/src/assets/logo.svg" />
+    </RouterLink>
+
     <nav class="header__nav">
       <ul>
         <li>O mnie</li>
@@ -33,7 +36,7 @@ import BaseDivider from '@/components/BaseDivider.vue'
 
   &__logo {
     max-width: 400px;
-    max-height: 180px;
+    max-height: 200px;
     margin-top: -10px;
     margin-left: -20px;
   }

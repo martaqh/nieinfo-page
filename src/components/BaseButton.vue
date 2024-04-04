@@ -51,6 +51,10 @@ const componentVariant = computed(() => {
     box-shadow: $box-shadow;
     cursor: pointer;
   }
+
+  &__slot {
+    text-align: center;
+  }
   &.social {
     padding: 12px;
     background-color: inherit;

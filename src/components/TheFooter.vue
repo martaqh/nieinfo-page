@@ -4,23 +4,23 @@ import BaseDivider from '@/components/BaseDivider.vue'
 
 const links = {
   twitter: {
-    path: 'http://x.com',
+    path: 'http://x.com/nieinformatyk',
     icon: 'src/assets/social-media/x-twitter.svg'
   },
   facebook: {
-    path: 'http://facebook.com',
+    path: 'http://facebook.com/nieinformatyk',
     icon: 'src/assets/social-media/facebook.svg'
   },
   youtube: {
-    path: 'http://youtube.com',
+    path: 'http://youtube.com/nieinformatyk',
     icon: 'src/assets/social-media/youtube.svg'
   },
   linkedin: {
-    path: 'http://linkedin.com',
+    path: 'http://linkedin.com/nieinformatyk',
     icon: 'src/assets/social-media/linkedin.svg'
   },
   instagram: {
-    path: 'http://instagram.com',
+    path: 'http://instagram.com/nieinformatyk',
     icon: 'src/assets/social-media/instagram.svg'
   }
 }
@@ -30,13 +30,13 @@ const links = {
   <footer class="footer">
     <BaseDivider reverse />
     <div class="footer__content">
-      <p>kontakt@nieinformatyk.pl</p>
+      <span>kontakt@nieinformatyk.pl</span>
       <nav>
         <BaseButton v-for="link in links" :key="link.path" :href="link.path" social
           ><img :src="link.icon" />
         </BaseButton>
       </nav>
-      <a>Regulamin</a>
+      <a href="https://nieinformatyk.pl/regulamin">Regulamin</a>
     </div>
   </footer>
 </template>
