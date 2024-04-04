@@ -5,6 +5,8 @@ $font-title: Montserrat, sans-serif;
 
 $font-main: 'Source Code Pro', sans-serif;
 
+$font-weight-main: 300;
+
 $color-background: #151f21;
 
 $color-accent: #38bcd6;
@@ -49,27 +51,27 @@ $border-radius: 8px;
 $divider-gradient: linear-gradient(
   90deg,
   hsl(190deg 22% 11%) 0%,
-  hsl(190deg 14% 17%) 47%,
-  hsl(190deg 11% 24%) 68%,
-  hsl(189deg 8% 31%) 80%,
-  hsl(189deg 7% 38%) 87%,
-  hsl(189deg 6% 46%) 92%,
-  hsl(189deg 6% 54%) 94%,
-  hsl(189deg 8% 62%) 96%,
-  hsl(188deg 10% 71%) 98%,
+  hsl(190deg 14% 17%) 38%,
+  hsl(190deg 11% 24%) 55%,
+  hsl(189deg 8% 31%) 68%,
+  hsl(189deg 7% 38%) 78%,
+  hsl(189deg 6% 46%) 86%,
+  hsl(189deg 6% 54%) 93%,
+  hsl(189deg 8% 62%) 97%,
+  hsl(188deg 10% 71%) 100%,
   hsl(188deg 14% 79%) 100%
 );
 
 $divider-gradient-reverse: linear-gradient(
   270deg,
   hsl(190deg 22% 11%) 0%,
-  hsl(190deg 14% 17%) 47%,
-  hsl(190deg 11% 24%) 68%,
-  hsl(189deg 8% 31%) 80%,
-  hsl(189deg 7% 38%) 87%,
-  hsl(189deg 6% 46%) 92%,
-  hsl(189deg 6% 54%) 94%,
-  hsl(189deg 8% 62%) 96%,
-  hsl(188deg 10% 71%) 98%,
+  hsl(190deg 14% 17%) 38%,
+  hsl(190deg 11% 24%) 55%,
+  hsl(189deg 8% 31%) 68%,
+  hsl(189deg 7% 38%) 78%,
+  hsl(189deg 6% 46%) 86%,
+  hsl(189deg 6% 54%) 93%,
+  hsl(189deg 8% 62%) 97%,
+  hsl(188deg 10% 71%) 100%,
   hsl(188deg 14% 79%) 100%
 );

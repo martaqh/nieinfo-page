@@ -4,6 +4,7 @@ import { computed } from 'vue'
 interface Props {
   to?: string
   href?: string
+  social?: boolean
 }
 
 const props = defineProps<Props>()
@@ -20,7 +21,13 @@ const componentVariant = computed(() => {
 </script>
 
 <template>
-  <component class="base-button" :is="componentVariant" :href="href || to" :to="to">
+  <component
+    class="base-button"
+    :is="componentVariant"
+    :href="href || to"
+    :to="to"
+    :class="{ social: social }"
+  >
     <div class="base-button__slot">
       <slot> </slot>
     </div>
@@ -43,6 +50,17 @@ const componentVariant = computed(() => {
     outline: 2px solid $color-accent;
     box-shadow: $box-shadow;
     cursor: pointer;
+  }
+  &.social {
+    padding: 12px;
+    background-color: inherit;
+    width: 24px;
+    height: 24px;
+    border: none;
+    * {
+      //object-fit: cover;
+      filter: brightness(0) invert(1);
+    }
   }
 }
 </style>

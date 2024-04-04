@@ -42,6 +42,7 @@ import BaseDivider from '@/components/BaseDivider.vue'
             <BaseButton>Pobierz ebook</BaseButton>
           </div>
         </div>
+
         <div class="home__bonuses__ebook reverse">
           <img class="home__bonuses__ebook__image" src="/src/assets/BONUS_LEAD_MAGNET.png" />
           <div class="home__bonuses__ebook__text">
@@ -57,7 +58,6 @@ import BaseDivider from '@/components/BaseDivider.vue'
           </div>
         </div>
       </section>
-      <BaseDivider reverse />
     </div>
   </BasePage>
 </template>
@@ -69,7 +69,8 @@ import BaseDivider from '@/components/BaseDivider.vue'
     display: flex;
     justify-content: space-between;
     width: 100%;
-    padding: 0 48px;
+    padding: 0;
+    font-weight: $font-weight-main;
 
     &__text {
       width: min-content;
