@@ -14,7 +14,8 @@ withDefaults(defineProps<Props>(), {
 
 <style lang="scss" scoped>
 .base-divider {
-  margin: 0 -100px;
+  max-width: 1400px;
+  width: 100%;
   height: 1px;
   border-radius: $border-radius;
   background-image: $divider-gradient;
