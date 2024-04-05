@@ -2,6 +2,7 @@
 import BasePage from '@/pages/BasePage.vue'
 import BaseButton from '@/components/BaseButton.vue'
 import BaseDivider from '@/components/BaseDivider.vue'
+import BonusDisplay from '@/components/BonusDisplay.vue'
 </script>
 
 <template>
@@ -28,35 +29,46 @@ import BaseDivider from '@/components/BaseDivider.vue'
       </section>
       <BaseDivider />
       <section class="home__bonuses">
-        <div class="home__bonuses__ebook">
-          <img class="home__bonuses__ebook__image" src="/src/assets/ecover.png" />
-          <div class="home__bonuses__ebook__text">
-            <h6>#bonus 1</h6>
-            <h2>Ebook dla początkujących</h2>
-            <p>
-              Chcesz zostać programistą baz danych, ale informatyka to dla Ciebie zupełna nowość?
-              <br />
-              Jeśli myślisz o przebranżowieniu do IT, to ten e-book jest
-              <strong> właśnie dla Ciebie!</strong>
-            </p>
-            <BaseButton href="https://promo.podstawybazdanych.pl/">Pobierz ebook</BaseButton>
-          </div>
-        </div>
-
-        <div class="home__bonuses__ebook reverse">
-          <img class="home__bonuses__ebook__image" src="/src/assets/BONUS_LEAD_MAGNET.png" />
-          <div class="home__bonuses__ebook__text">
-            <h6>#bonus 2</h6>
-            <h2>Poradnik dla programistów PL/SQL</h2>
-            <p>
-              Jeśli chcesz poprawić wydajność i jakość Twoich aplikacji w bazie danych Oracle, to
-              koniecznie sięgnij po ten poradnik. Dzięki niemu poznasz
-              <strong>SIEDEM&nbsp;najczęstszych błędów</strong>
-              programistów PL/SQL wraz z analizą kodu i zaleceniami.
-            </p>
-            <BaseButton href="https://promo.plsql.pl/">Pobierz poradnik</BaseButton>
-          </div>
-        </div>
+        <BonusDisplay
+          number="1"
+          button-label="Pobierz e-book"
+          image-url="/src/assets/ecover.png"
+          bonus-url="https://promo.podstawybazdanych.pl/"
+        >
+          <template #title>E-book dla początkujących</template>
+          <template #description>
+            Chcesz zostać programistą baz danych, ale informatyka to dla Ciebie zupełna nowość?
+            Jeśli myślisz o przebranżowieniu do IT to ten e-book
+            <strong>BARDZO CI SIĘ SPODOBA!</strong>
+          </template>
+        </BonusDisplay>
+        <BonusDisplay
+          number="2"
+          buttonLabel="Pobierz e-book"
+          image-url="/src/assets/mistrz_sql_promo.png"
+          bonus-url="https://www.mistrzsql.pl/"
+          reverse
+        >
+          <template #title>Porównanie SQL w RDBMS</template>
+          <template #description>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus
+            lobortis condimentum. Aliquam nonummy auctor massa.
+          </template>
+        </BonusDisplay>
+        <BonusDisplay
+          number="2"
+          buttonLabel="Pobierz poradnik"
+          image-url="/src/assets/BONUS_LEAD_MAGNET.png"
+          bonus-url="https://promo.plsql.pl/"
+        >
+          <template #title>Poradnik dla programistów PL/SQL</template>
+          <template #description>
+            Jeśli chcesz poprawić wydajność i jakość Twoich aplikacji w bazie danych Oracle to
+            koniecznie sięgnij po ten poradnik. Poznasz w nim
+            <strong>siedem najczęstszych błędów</strong> programistów PL/SQL wraz z analizą kodu i
+            zaleceniami.
+          </template>
+        </BonusDisplay>
       </section>
     </div>
   </BasePage>
@@ -158,56 +170,9 @@ import BaseDivider from '@/components/BaseDivider.vue'
     flex-direction: column;
     gap: 48px;
 
-    &__ebook {
-      margin: 80px;
-      display: flex;
-      justify-content: space-between;
-      gap: 120px;
-      height: fit-content;
-
-      &__image {
-        max-width: 500px;
-        object-fit: cover;
-        overflow: hidden;
-      }
-
-      &__text {
-        min-width: 50%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        gap: 48px;
-        line-height: 150%;
-
-        h6 {
-          font-size: 2rem;
-          font-weight: 200;
-          color: $color-text-light;
-        }
-
-        h2 {
-          font-family: $font-title;
-          font-size: 2rem;
-          font-weight: 600;
-          line-height: 120%;
-        }
-
-        p {
-          margin: 24px 0;
-          font-size: 1.1rem;
-          font-weight: 300;
-          line-height: 150%;
-
-          strong {
-            text-transform: uppercase;
-            font-weight: 700;
-          }
-        }
-      }
-      &.reverse {
-        display: flex;
-        flex-direction: row-reverse;
-      }
+    strong {
+      text-transform: uppercase;
+      font-weight: 700;
     }
   }
 }
