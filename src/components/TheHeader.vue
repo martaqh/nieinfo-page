@@ -1,18 +1,18 @@
 <script setup lang="ts">
-import BaseDivider from '@/components/BaseDivider.vue'
+import NavLink from '@/components/NavLink.vue'
 </script>
 
 <template>
   <header class="header">
-    <RouterLink to="/">
+    <NavLink to="/">
       <img class="header__logo" src="/src/assets/logo.svg" />
-    </RouterLink>
+    </NavLink>
 
     <nav class="header__nav">
       <ul>
-        <li>O mnie</li>
-        <li>Produkty</li>
-        <li>Kontakt</li>
+        <li><NavLink>O mnie</NavLink></li>
+        <li><NavLink>Produkty</NavLink></li>
+        <li><NavLink>Kontakt</NavLink></li>
       </ul>
     </nav>
   </header>
@@ -37,8 +37,7 @@ import BaseDivider from '@/components/BaseDivider.vue'
   &__logo {
     max-width: 400px;
     max-height: 200px;
-    margin-top: -10px;
-    margin-left: -20px;
+    margin: -30px 0 -30px -20px;
   }
 
   &__nav {
@@ -48,12 +47,6 @@ import BaseDivider from '@/components/BaseDivider.vue'
 
       li {
         padding: 0 48px;
-
-        &:hover {
-          cursor: pointer;
-          color: $color-accent;
-          text-shadow: $text-shadow;
-        }
       }
       li:last-child {
         padding-right: 0;

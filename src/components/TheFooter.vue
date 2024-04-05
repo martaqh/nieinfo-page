@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import BaseButton from '@/components/BaseButton.vue'
 import BaseDivider from '@/components/BaseDivider.vue'
+import NavLink from '@/components/NavLink.vue'
 
 const links = {
   twitter: {
@@ -36,7 +37,7 @@ const links = {
           ><img :src="link.icon" />
         </BaseButton>
       </nav>
-      <a href="https://nieinformatyk.pl/regulamin">Regulamin</a>
+      <NavLink href="https://nieinformatyk.pl/regulamin">Regulamin</NavLink>
     </div>
   </footer>
 </template>
