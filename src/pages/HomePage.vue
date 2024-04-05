@@ -35,7 +35,7 @@ import BonusDisplay from '@/components/BonusDisplay.vue'
         <BonusDisplay
           number="1"
           button-label="Pobierz e-book"
-          image-url="/src/assets/ecover.png"
+          image-url="/assets/ecover.png"
           bonus-url="https://promo.podstawybazdanych.pl/"
         >
           <template #title>E-book dla początkujących</template>
@@ -48,7 +48,7 @@ import BonusDisplay from '@/components/BonusDisplay.vue'
         <BonusDisplay
           number="2"
           buttonLabel="Pobierz e-book"
-          image-url="/src/assets/mistrz_sql_promo.png"
+          image-url="/assets/mistrz_sql_promo.png"
           bonus-url="https://www.mistrzsql.pl/"
           reverse
         >
@@ -61,7 +61,7 @@ import BonusDisplay from '@/components/BonusDisplay.vue'
         <BonusDisplay
           number="2"
           buttonLabel="Pobierz poradnik"
-          image-url="/src/assets/BONUS_LEAD_MAGNET.png"
+          image-url="/assets/BONUS_LEAD_MAGNET.png"
           bonus-url="https://promo.plsql.pl/"
         >
           <template #title>Poradnik dla programistów PL/SQL</template>
