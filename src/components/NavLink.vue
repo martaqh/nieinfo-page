@@ -3,6 +3,7 @@ import { computed } from 'vue'
 interface Props {
   to?: string
   href?: string
+  blank?: boolean
 }
 
 const props = defineProps<Props>()
@@ -13,7 +14,13 @@ const componentVariant = computed(() => {
 </script>
 
 <template>
-  <component :is="componentVariant" class="nav-link" :to="to" :href="href">
+  <component
+    :is="componentVariant"
+    class="nav-link"
+    :to="to"
+    :href="href"
+    :target="blank ? blank : null"
+  >
     <slot></slot>
   </component>
 </template>

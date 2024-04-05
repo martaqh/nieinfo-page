@@ -37,7 +37,7 @@ const links = {
           ><img :src="link.icon" />
         </BaseButton>
       </nav>
-      <NavLink href="https://nieinformatyk.pl/regulamin">Regulamin</NavLink>
+      <NavLink href="https://nieinformatyk.pl/regulamin" blank>Regulamin</NavLink>
     </div>
   </footer>
 </template>
@@ -45,7 +45,6 @@ const links = {
 <style lang="scss" scoped>
 .footer {
   max-width: 1400px;
-
   display: flex;
   flex-direction: column;
   margin: 0 auto;
