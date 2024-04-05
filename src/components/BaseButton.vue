@@ -61,9 +61,10 @@ const componentVariant = computed(() => {
     width: 24px;
     height: 24px;
     border: none;
+
     * {
-      //object-fit: cover;
       filter: brightness(0) invert(1);
+      height: 100%;
     }
   }
   &__slot {
