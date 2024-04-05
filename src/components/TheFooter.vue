@@ -6,23 +6,23 @@ import NavLink from '@/components/NavLink.vue'
 const links = {
   twitter: {
     path: 'http://x.com/nieinformatyk',
-    icon: 'src/assets/social-media/x-twitter.svg'
+    icon: 'public/assets/social-media/x-twitter.svg'
   },
   facebook: {
     path: 'http://facebook.com/nieinformatyk',
-    icon: 'src/assets/social-media/facebook.svg'
+    icon: 'public/assets/social-media/facebook.svg'
   },
   youtube: {
     path: 'http://youtube.com/nieinformatyk',
-    icon: 'src/assets/social-media/youtube.svg'
+    icon: 'public/assets/social-media/youtube.svg'
   },
   linkedin: {
     path: 'http://linkedin.com/nieinformatyk',
-    icon: 'src/assets/social-media/linkedin.svg'
+    icon: 'public/assets/social-media/linkedin.svg'
   },
   instagram: {
     path: 'http://instagram.com/nieinformatyk',
-    icon: 'src/assets/social-media/instagram.svg'
+    icon: 'public/assets/social-media/instagram.svg'
   }
 }
 </script>
