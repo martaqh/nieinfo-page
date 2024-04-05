@@ -13,7 +13,10 @@ import BonusDisplay from '@/components/BonusDisplay.vue'
           <h1 class="home__hero__text--title">Naucz się programowania <span>baz danych</span></h1>
           <p class="home__hero__text--subtitle">Od zera do poziomu zaawansowanego</p>
 
-          <BaseButton> Pobierz darmowe ebooki </BaseButton>
+          <BaseButton href="#bonuses">
+            <span class="material-symbols-outlined"> arrow_downward </span>
+            Pobierz darmowe ebooki <span class="material-symbols-outlined"> arrow_downward </span>
+          </BaseButton>
         </div>
         <div class="home__hero__picture">
           <img src="/src/assets/moje zdjecie.png" />
@@ -28,7 +31,7 @@ import BonusDisplay from '@/components/BonusDisplay.vue'
         </div>
       </section>
       <BaseDivider />
-      <section class="home__bonuses">
+      <section class="home__bonuses" id="bonuses">
         <BonusDisplay
           number="1"
           button-label="Pobierz e-book"

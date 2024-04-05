@@ -66,5 +66,10 @@ const componentVariant = computed(() => {
       filter: brightness(0) invert(1);
     }
   }
+  &__slot {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
 }
 </style>
