@@ -59,7 +59,7 @@ import BonusDisplay from '@/components/BonusDisplay.vue'
           </template>
         </BonusDisplay>
         <BonusDisplay
-          number="2"
+          number="3"
           buttonLabel="Pobierz poradnik"
           image-url="/assets/BONUS_LEAD_MAGNET.png"
           bonus-url="https://promo.plsql.pl/"
