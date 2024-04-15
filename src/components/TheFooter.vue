@@ -4,14 +4,6 @@ import BaseDivider from '@/components/BaseDivider.vue'
 import NavLink from '@/components/NavLink.vue'
 
 const links = {
-  twitter: {
-    path: 'http://x.com/nieinformatyk',
-    icon: '/assets/social-media/x-twitter.svg'
-  },
-  facebook: {
-    path: 'http://facebook.com/nieinformatyk',
-    icon: '/assets/social-media/facebook.svg'
-  },
   youtube: {
     path: 'http://youtube.com/nieinformatyk',
     icon: '/assets/social-media/youtube.svg'
@@ -20,9 +12,17 @@ const links = {
     path: 'http://linkedin.com/nieinformatyk',
     icon: '/assets/social-media/linkedin.svg'
   },
+  facebook: {
+    path: 'http://facebook.com/nieinformatyk',
+    icon: '/assets/social-media/facebook.svg'
+  },
   instagram: {
     path: 'http://instagram.com/nieinformatyk',
     icon: '/assets/social-media/instagram.svg'
+  },
+  twitter: {
+    path: 'http://x.com/nieinformatyk',
+    icon: '/assets/social-media/x-twitter.svg'
   }
 }
 </script>
