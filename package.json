@@ -13,6 +13,8 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "@sanity/client": "^6.15.14",
+    "@sanity/image-url": "^1.0.2",
     "pinia": "^2.1.7",
     "scss": "^0.2.4",
     "vue": "^3.4.21",
