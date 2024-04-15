@@ -9,7 +9,7 @@ const links = {
     icon: '/assets/social-media/youtube.svg'
   },
   linkedin: {
-    path: 'http://linkedin.com/nieinformatyk',
+    path: 'https://www.linkedin.com/in/darekbutkiewicz/',
     icon: '/assets/social-media/linkedin.svg'
   },
   facebook: {
