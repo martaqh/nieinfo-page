@@ -1,8 +1,24 @@
 <script setup lang="ts">
+import { onMounted, ref } from 'vue'
 import BasePage from '@/pages/BasePage.vue'
 import BaseButton from '@/components/BaseButton.vue'
 import BaseDivider from '@/components/BaseDivider.vue'
 import BonusDisplay from '@/components/BonusDisplay.vue'
+import { getBonuses } from '@/sanity/sanity'
+
+const bonuses = ref()
+
+async function fetchBonuses() {
+  try {
+    bonuses.value = await getBonuses()
+  } catch (error) {
+    console.error('Error fetching posts:', error)
+  }
+}
+
+onMounted(() => {
+  fetchBonuses()
+})
 </script>
 
 <template>
@@ -33,44 +49,15 @@ import BonusDisplay from '@/components/BonusDisplay.vue'
       <BaseDivider />
       <section class="home__bonuses" id="bonuses">
         <BonusDisplay
-          number="1"
+          v-for="bonus of bonuses"
+          :key="bonus.Number"
+          :number="bonus.Number"
+          :title="bonus.title"
           button-label="Pobierz e-book"
-          image-url="/assets/ecover.png"
+          :image-url="bonus.image"
+          :description="bonus.description"
           bonus-url="https://promo.podstawybazdanych.pl/"
         >
-          <template #title>E-book dla początkujących</template>
-          <template #description>
-            Chcesz zostać programistą baz danych, ale informatyka to dla Ciebie zupełna nowość?
-            Jeśli myślisz o przebranżowieniu do IT to ten e-book
-            <strong>BARDZO CI SIĘ SPODOBA!</strong>
-          </template>
-        </BonusDisplay>
-        <BonusDisplay
-          number="2"
-          buttonLabel="Pobierz e-book"
-          image-url="/assets/mistrz_sql_promo.png"
-          bonus-url="https://www.mistrzsql.pl/"
-          reverse
-        >
-          <template #title>Porównanie SQL w RDBMS</template>
-          <template #description>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus
-            lobortis condimentum. Aliquam nonummy auctor massa.
-          </template>
-        </BonusDisplay>
-        <BonusDisplay
-          number="3"
-          buttonLabel="Pobierz poradnik"
-          image-url="/assets/BONUS_LEAD_MAGNET.png"
-          bonus-url="https://promo.plsql.pl/"
-        >
-          <template #title>Poradnik dla programistów PL/SQL</template>
-          <template #description>
-            Jeśli chcesz poprawić wydajność i jakość Twoich aplikacji w bazie danych Oracle to
-            koniecznie sięgnij po ten poradnik. Poznasz w nim
-            <strong>siedem najczęstszych błędów</strong> programistów PL/SQL wraz z analizą kodu i
-            zaleceniami.
-          </template>
         </BonusDisplay>
       </section>
     </div>

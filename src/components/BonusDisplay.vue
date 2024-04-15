@@ -1,27 +1,42 @@
 <script setup lang="ts">
+import { computed } from 'vue'
 import BaseButton from '@/components/BaseButton.vue'
+import imageUrlBuilder from '@sanity/image-url'
+import { client } from '@/sanity/sanity'
 
 interface Props {
-  number?: string
+  number: number
   reverse: boolean
+  title: string
   buttonLabel: string
-  imageUrl: string
+  imageUrl: any
   bonusUrl: string
+  description: string
 }
 
-withDefaults(defineProps<Props>(), {
+const props = withDefaults(defineProps<Props>(), {
   reverse: false
+})
+
+const builder = imageUrlBuilder(client)
+
+function urlFor(source: string) {
+  return builder.image(source)
+}
+
+const isEven = computed(() => {
+  return props.number % 2 === 0
 })
 </script>
 
 <template>
-  <div class="bonus-display" :class="{ reverse: reverse }">
-    <img class="bonus-display__image" :src="imageUrl" />
+  <div class="bonus-display" :class="{ reverse: isEven }">
+    <img class="bonus-display__image" :src="urlFor(imageUrl).url()" />
     <div class="bonus-display__text">
       <h6>#bonus {{ number }}</h6>
-      <h2><slot name="title"></slot></h2>
+      <h2>{{ title }}</h2>
       <p>
-        <slot name="description"></slot>
+        {{ description }}
       </p>
       <BaseButton :href="bonusUrl">{{ buttonLabel }}</BaseButton>
     </div>
