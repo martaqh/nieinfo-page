@@ -50,13 +50,13 @@ onMounted(() => {
       <section class="home__bonuses" id="bonuses">
         <BonusDisplay
           v-for="bonus of bonuses"
-          :key="bonus.Number"
-          :number="bonus.Number"
+          :key="bonus.number"
+          :number="bonus.number"
           :title="bonus.title"
-          button-label="Pobierz e-book"
+          :button-label="bonus.buttonLabel"
           :image-url="bonus.image"
           :description="bonus.description"
-          bonus-url="https://promo.podstawybazdanych.pl/"
+          :bonus-url="bonus.bonusUrl"
         >
         </BonusDisplay>
       </section>
