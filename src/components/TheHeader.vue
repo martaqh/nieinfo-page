@@ -34,6 +34,10 @@ import NavLink from '@/components/NavLink.vue'
   font-size: 1.1rem;
   font-weight: 400;
 
+  @include small {
+    flex-direction: column;
+  }
+
   &__logo {
     max-width: 400px;
     max-height: 200px;
@@ -52,13 +56,21 @@ import NavLink from '@/components/NavLink.vue'
     }
 
     @include small {
-      display: none;
+      width: 100%;
+      font-size: 0.9rem;
+      border: 1px solid white;
+      display: flex;
+      justify-content: center;
     }
     ul {
       display: flex;
 
       li {
         padding: 0 48px;
+
+        @include small {
+          padding: 24px 32px;
+        }
       }
     }
   }

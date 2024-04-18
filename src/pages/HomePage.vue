@@ -86,7 +86,7 @@ onMounted(() => {
 
       @include small {
         width: max-content;
-        padding: 48px;
+        padding: 80px 48px;
         text-align: center;
       }
 
