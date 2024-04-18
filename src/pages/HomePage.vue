@@ -74,11 +74,21 @@ onMounted(() => {
     padding: 0;
     font-weight: $font-weight-main;
 
+    @include medium {
+      padding: 0 48px;
+    }
+
     &__text {
       width: min-content;
       display: flex;
       flex-direction: column;
       padding: 120px 0;
+
+      @include small {
+        width: max-content;
+        padding: 48px;
+        text-align: center;
+      }
 
       &--title {
         font-family: $font-title;
@@ -89,12 +99,28 @@ onMounted(() => {
         background: $text-gradient;
         background-clip: text;
         -webkit-text-fill-color: transparent;
+
+        @include medium {
+          font-size: 3rem;
+        }
+
+        @include small {
+          font-size: 2.5rem;
+        }
+
+        @include x-small {
+          font-size: 2.2rem;
+        }
       }
 
       &--subtitle {
         font-size: 1.2rem;
-        line-height: 120%;
+        line-height: 130%;
         margin-bottom: 80px;
+
+        @include small {
+          font-size: 1.1rem;
+        }
       }
     }
 
@@ -102,6 +128,11 @@ onMounted(() => {
       position: relative;
       width: 40%;
       max-height: 70%;
+      min-width: 376px;
+
+      @include small {
+        display: none;
+      }
 
       img {
         height: 100%;

@@ -55,6 +55,11 @@ const links = {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @include small {
+      flex-direction: column;
+      gap: 32px;
+    }
   }
 
   nav {

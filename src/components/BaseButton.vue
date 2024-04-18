@@ -46,6 +46,10 @@ const componentVariant = computed(() => {
   border: 2px solid $color-accent;
   border-radius: $border-radius;
 
+  @include small {
+    font-size: 1rem;
+  }
+
   &:hover {
     outline: 2px solid $color-accent;
     box-shadow: $box-shadow;

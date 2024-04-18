@@ -4,7 +4,7 @@ import NavLink from '@/components/NavLink.vue'
 
 <template>
   <header class="header">
-    <NavLink to="/">
+    <NavLink class="header__logo--link" to="/">
       <img class="header__logo" src="/src/assets/logo.svg" />
     </NavLink>
 
@@ -38,18 +38,27 @@ import NavLink from '@/components/NavLink.vue'
     max-width: 400px;
     max-height: 200px;
     margin: -30px 0 -30px -20px;
+
+    @include medium {
+      max-width: 300px;
+    }
   }
 
   &__nav {
     font-size: 1.1rem;
+
+    @include medium {
+      font-size: 1rem;
+    }
+
+    @include small {
+      display: none;
+    }
     ul {
       display: flex;
 
       li {
         padding: 0 48px;
-      }
-      li:last-child {
-        padding-right: 0;
       }
     }
   }

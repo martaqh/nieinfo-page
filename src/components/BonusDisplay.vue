@@ -51,10 +51,26 @@ const isEven = computed(() => {
   gap: 120px;
   height: fit-content;
 
+  @include medium {
+    gap: 80px;
+    margin: 64px 48px;
+  }
+
+  @include small {
+    flex-direction: column;
+    gap: 48px;
+    margin: 48px 0;
+  }
+
   &__image {
     max-width: 500px;
     object-fit: cover;
     overflow: hidden;
+
+    @include medium {
+      max-width: 350px;
+      min-width: 250px;
+    }
   }
 
   &__text {
@@ -65,10 +81,18 @@ const isEven = computed(() => {
     gap: 48px;
     line-height: 150%;
 
+    @include medium {
+      gap: 32px;
+    }
+
     h6 {
       font-size: 2rem;
       font-weight: 200;
       color: $color-text-light;
+
+      @include medium {
+        font-size: 1.5rem;
+      }
     }
 
     h2 {
@@ -76,6 +100,10 @@ const isEven = computed(() => {
       font-size: 2rem;
       font-weight: 600;
       line-height: 120%;
+
+      @include medium {
+        font-size: 1.7rem;
+      }
     }
 
     p {
@@ -83,6 +111,10 @@ const isEven = computed(() => {
       font-size: 1.1rem;
       font-weight: 300;
       line-height: 150%;
+
+      @include medium {
+        font-size: 1rem;
+      }
 
       strong {
         text-transform: uppercase;
@@ -93,6 +125,10 @@ const isEven = computed(() => {
   &.reverse {
     display: flex;
     flex-direction: row-reverse;
+
+    @include small {
+      flex-direction: column;
+    }
   }
 }
 </style>
