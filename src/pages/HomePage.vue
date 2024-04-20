@@ -85,8 +85,8 @@ onMounted(() => {
       padding: 120px 0;
 
       @include small {
-        width: max-content;
-        padding: 80px 48px;
+        width: 100%;
+        padding: 64px 24px;
         text-align: center;
       }
 
@@ -196,7 +196,7 @@ onMounted(() => {
   }
 
   &__bonuses {
-    padding: 80px 48px;
+    padding: 64px 48px;
     display: flex;
     flex-direction: column;
     gap: 48px;

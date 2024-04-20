@@ -59,7 +59,7 @@ const isEven = computed(() => {
   @include small {
     flex-direction: column;
     gap: 48px;
-    margin: 48px 0;
+    margin: 24px 0;
   }
 
   &__image {
