@@ -70,12 +70,12 @@ onMounted(() => {
     position: relative;
     display: flex;
     justify-content: space-between;
-    width: 100%;
+
     padding: 0;
     font-weight: $font-weight-main;
 
     @include medium {
-      padding: 0 48px;
+      padding-left: 48px;
     }
 
     &__text {
@@ -161,6 +161,10 @@ onMounted(() => {
         .gears {
           left: 420px;
           top: 130px;
+
+          @include medium {
+            display: none;
+          }
         }
 
         .terminal {
@@ -175,11 +179,17 @@ onMounted(() => {
         .analytics {
           left: 490px;
           top: 220px;
+          @include medium {
+            display: none;
+          }
         }
 
         .table {
           left: 420px;
           top: 310px;
+          @include medium {
+            display: none;
+          }
         }
       }
     }
