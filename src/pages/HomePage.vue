@@ -75,14 +75,18 @@ onMounted(() => {
     font-weight: $font-weight-main;
 
     @include medium {
-      padding-left: 48px;
+      padding: 0 48px;
     }
 
     &__text {
       width: min-content;
       display: flex;
       flex-direction: column;
-      padding: 120px 0;
+      padding: 120px 24px 120px 64px;
+
+      @include medium {
+        padding: 100px 32px 100px 0;
+      }
 
       @include small {
         width: 100%;
@@ -101,11 +105,11 @@ onMounted(() => {
         -webkit-text-fill-color: transparent;
 
         @include medium {
-          font-size: 3rem;
+          font-size: 2.8rem;
         }
 
         @include small {
-          font-size: 2.5rem;
+          font-size: 2rem;
         }
 
         @include x-small {
@@ -118,8 +122,12 @@ onMounted(() => {
         line-height: 130%;
         margin-bottom: 80px;
 
-        @include small {
+        @include medium {
           font-size: 1.1rem;
+        }
+
+        @include small {
+          font-size: 1rem;
         }
       }
     }
@@ -129,6 +137,10 @@ onMounted(() => {
       width: 40%;
       max-height: 70%;
       min-width: 376px;
+
+      @include medium {
+        width: 20%;
+      }
 
       @include small {
         display: none;
@@ -151,11 +163,19 @@ onMounted(() => {
           font-weight: 300;
           color: $color-accent;
           text-shadow: $text-shadow;
+
+          @include medium {
+            font-size: 2.2rem;
+          }
         }
 
         .database {
           left: -40px;
           top: 130px;
+
+          @include medium {
+            left: 10px;
+          }
         }
 
         .gears {
@@ -170,11 +190,21 @@ onMounted(() => {
         .terminal {
           left: 30px;
           top: 40px;
+
+          @include medium {
+            left: 60px;
+            top: 60px;
+          }
         }
 
         .node {
           left: 30px;
           top: 220px;
+
+          @include medium {
+            left: 60px;
+            top: 200px;
+          }
         }
         .analytics {
           left: 490px;
