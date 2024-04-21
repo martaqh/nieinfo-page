@@ -70,8 +70,6 @@ onMounted(() => {
     position: relative;
     display: flex;
     justify-content: space-between;
-
-    padding: 0;
     font-weight: $font-weight-main;
 
     @include medium {
@@ -82,7 +80,11 @@ onMounted(() => {
       width: min-content;
       display: flex;
       flex-direction: column;
-      padding: 120px 24px 120px 64px;
+      padding: 100px 32px 100px 0;
+
+      @include large {
+        padding-left: 48px;
+      }
 
       @include medium {
         padding: 100px 32px 100px 0;
@@ -174,13 +176,17 @@ onMounted(() => {
           top: 130px;
 
           @include medium {
-            left: 10px;
+            left: 0px;
           }
         }
 
         .gears {
           left: 420px;
           top: 130px;
+
+          @include large {
+            display: none;
+          }
 
           @include medium {
             display: none;
@@ -192,7 +198,7 @@ onMounted(() => {
           top: 40px;
 
           @include medium {
-            left: 60px;
+            left: 50px;
             top: 60px;
           }
         }
@@ -202,13 +208,17 @@ onMounted(() => {
           top: 220px;
 
           @include medium {
-            left: 60px;
+            left: 50px;
             top: 200px;
           }
         }
         .analytics {
           left: 490px;
           top: 220px;
+
+          @include large {
+            display: none;
+          }
           @include medium {
             display: none;
           }
@@ -217,6 +227,10 @@ onMounted(() => {
         .table {
           left: 420px;
           top: 310px;
+
+          @include large {
+            display: none;
+          }
           @include medium {
             display: none;
           }
