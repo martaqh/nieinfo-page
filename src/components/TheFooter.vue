@@ -51,7 +51,7 @@ const links = {
   font-size: 1.1rem;
 
   &__content {
-    padding: 64px 24px;
+    padding: 64px 48px;
     display: flex;
     justify-content: space-between;
     align-items: center;

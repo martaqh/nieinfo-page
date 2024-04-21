@@ -74,6 +74,10 @@ import NavLink from '@/components/NavLink.vue'
           padding: 24px 32px;
         }
       }
+
+      li:last-child {
+        padding-right: 48px;
+      }
     }
   }
 }
