@@ -1,8 +1,14 @@
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, computed } from 'vue'
 import NavLink from '@/components/NavLink.vue'
 import BaseButton from '@/components/BaseButton.vue'
 import { getNavLinks } from '@/sanity/service/Header'
+
+interface NavLink {
+  orderNumber: number
+  label: string
+  path: string
+}
 
 const navLinks = ref()
 
@@ -13,6 +19,10 @@ async function fetchNavLinks() {
     console.error('Error fetching posts:', error)
   }
 }
+
+const sortedNavLinks = computed(() => {
+  return navLinks.value?.slice().sort((a: NavLink, b: NavLink) => a.orderNumber - b.orderNumber)
+})
 
 const menuModal = ref<HTMLDialogElement | null>(null)
 
@@ -42,8 +52,8 @@ onMounted(() => {
 
     <nav class="header__nav">
       <ul>
-        <li v-for="link of navLinks" :key="link.name">
-          <NavLink>{{ link.name }}</NavLink>
+        <li v-for="link of sortedNavLinks" :key="link.orderNumber">
+          <NavLink>{{ link.label }}</NavLink>
         </li>
       </ul>
     </nav>
