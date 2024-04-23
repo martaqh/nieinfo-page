@@ -4,7 +4,7 @@ import BasePage from '@/pages/BasePage.vue'
 import BaseButton from '@/components/BaseButton.vue'
 import BaseDivider from '@/components/BaseDivider.vue'
 import BonusDisplay from '@/components/BonusDisplay.vue'
-import { getBonuses, getHeroData } from '@/sanity/sanity'
+import { getBonuses, getHeroData } from '@/sanity/service/HomePage'
 
 const bonuses = ref()
 
@@ -29,7 +29,6 @@ async function fetchBonuses() {
 onMounted(() => {
   fetchHeroData()
   fetchBonuses()
-  console.log(hero.value)
 })
 </script>
 
@@ -37,7 +36,7 @@ onMounted(() => {
   <BasePage>
     <div class="home">
       <section class="home__hero">
-        <div class="home__hero__text">
+        <div v-if="hero" class="home__hero__text">
           <h1 class="home__hero__text--title">{{ hero[0].title }}</h1>
           <p class="home__hero__text--subtitle">{{ hero[0].subtitle }}</p>
 
@@ -264,3 +263,4 @@ onMounted(() => {
   }
 }
 </style>
+@/sanity/sanityClient

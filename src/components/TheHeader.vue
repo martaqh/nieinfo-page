@@ -1,7 +1,18 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 import NavLink from '@/components/NavLink.vue'
 import BaseButton from '@/components/BaseButton.vue'
+import { getNavLinks } from '@/sanity/service/Header'
+
+const navLinks = ref()
+
+async function fetchNavLinks() {
+  try {
+    navLinks.value = await getNavLinks()
+  } catch (error) {
+    console.error('Error fetching posts:', error)
+  }
+}
 
 const menuModal = ref<HTMLDialogElement | null>(null)
 
@@ -17,6 +28,10 @@ const closeModal = () => {
     menuModal.value.close()
   }
 }
+
+onMounted(() => {
+  fetchNavLinks()
+})
 </script>
 
 <template>
@@ -27,9 +42,9 @@ const closeModal = () => {
 
     <nav class="header__nav">
       <ul>
-        <li><NavLink>O mnie</NavLink></li>
-        <li><NavLink>Produkty</NavLink></li>
-        <li><NavLink>Kontakt</NavLink></li>
+        <li v-for="link of navLinks" :key="link.name">
+          <NavLink>{{ link.name }}</NavLink>
+        </li>
       </ul>
     </nav>
     <BaseButton class="header__menu" plain @click="openModal">

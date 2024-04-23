@@ -2,7 +2,7 @@
 import { computed } from 'vue'
 import BaseButton from '@/components/BaseButton.vue'
 import imageUrlBuilder from '@sanity/image-url'
-import { client } from '@/sanity/sanity'
+import { client } from '@/sanity/sanityClient'
 
 interface Props {
   number: number
@@ -132,3 +132,4 @@ const isEven = computed(() => {
   }
 }
 </style>
+@/sanity/sanityClient
