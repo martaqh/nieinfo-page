@@ -124,8 +124,9 @@ const closeModal = () => {
       width: 100%;
       min-height: 100vh;
       background: $color-background;
+      opacity: 0.9;
       border: none;
-      color: $color-text;
+      color: white;
       font-size: 2rem;
       margin: 0;
 
