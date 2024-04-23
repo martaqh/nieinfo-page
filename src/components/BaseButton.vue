@@ -5,6 +5,7 @@ interface Props {
   to?: string
   href?: string
   social?: boolean
+  plain?: boolean
 }
 
 const props = defineProps<Props>()
@@ -26,7 +27,7 @@ const componentVariant = computed(() => {
     :is="componentVariant"
     :href="href || to"
     :to="to"
-    :class="{ social: social }"
+    :class="{ social: social, plain: plain }"
   >
     <div class="base-button__slot">
       <slot> </slot>
@@ -71,6 +72,13 @@ const componentVariant = computed(() => {
       height: 100%;
     }
   }
+
+  &.plain {
+    background: inherit;
+    border: none;
+    padding: 0;
+  }
+
   &__slot {
     display: flex;
     align-items: center;
