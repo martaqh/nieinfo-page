@@ -4,9 +4,19 @@ import BasePage from '@/pages/BasePage.vue'
 import BaseButton from '@/components/BaseButton.vue'
 import BaseDivider from '@/components/BaseDivider.vue'
 import BonusDisplay from '@/components/BonusDisplay.vue'
-import { getBonuses } from '@/sanity/sanity'
+import { getBonuses, getHeroData } from '@/sanity/sanity'
 
 const bonuses = ref()
+
+const hero = ref()
+
+async function fetchHeroData() {
+  try {
+    hero.value = await getHeroData()
+  } catch (error) {
+    console.error('Error fetching posts:', error)
+  }
+}
 
 async function fetchBonuses() {
   try {
@@ -17,7 +27,9 @@ async function fetchBonuses() {
 }
 
 onMounted(() => {
+  fetchHeroData()
   fetchBonuses()
+  console.log(hero.value)
 })
 </script>
 
@@ -26,12 +38,12 @@ onMounted(() => {
     <div class="home">
       <section class="home__hero">
         <div class="home__hero__text">
-          <h1 class="home__hero__text--title">Naucz się programowania <span>baz danych</span></h1>
-          <p class="home__hero__text--subtitle">Od zera do poziomu zaawansowanego</p>
+          <h1 class="home__hero__text--title">{{ hero[0].title }}</h1>
+          <p class="home__hero__text--subtitle">{{ hero[0].subtitle }}</p>
 
           <BaseButton href="#bonuses">
             <span class="material-symbols-outlined"> arrow_downward </span>
-            Pobierz darmowe ebooki <span class="material-symbols-outlined"> arrow_downward </span>
+            {{ hero[0].buttonLabel }}<span class="material-symbols-outlined"> arrow_downward </span>
           </BaseButton>
         </div>
         <div class="home__hero__picture">

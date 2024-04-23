@@ -12,6 +12,13 @@ export const client = createClient({
 })
 
 // uses GROQ to query content: https://www.sanity.io/docs/groq
+
+export async function getHeroData() {
+  const heroData = await client.fetch('*[_type == "hero"]')
+  console.log(heroData)
+  return heroData
+}
+
 export async function getBonuses() {
   const bonuses = await client.fetch('*[_type == "bonus"]')
   return bonuses
