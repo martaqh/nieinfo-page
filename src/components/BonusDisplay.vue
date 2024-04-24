@@ -27,12 +27,26 @@ function urlFor(source: string) {
 const isEven = computed(() => {
   return props.number % 2 === 0
 })
+
+const secondDotColor = computed(() => {
+  return props.number >= 2 ? '#38bcd6' : 'white'
+})
+
+const thirdDotColor = computed(() => {
+  return props.number === 3 ? '#38bcd6' : 'white'
+})
 </script>
 
 <template>
   <div class="bonus-display" :class="{ reverse: isEven }">
     <img class="bonus-display__image" :src="urlFor(imageUrl).url()" />
     <div class="bonus-display__text">
+      <div class="bonus-display__text__level">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
       <h6>#bonus {{ number }}</h6>
       <h2>{{ title }}</h2>
       <p>
@@ -83,6 +97,28 @@ const isEven = computed(() => {
 
     @include medium {
       gap: 32px;
+    }
+
+    &__level {
+      display: flex;
+      span {
+        &::after {
+          content: '';
+          display: inline-block;
+          width: 0.5rem;
+          height: 0.5rem;
+          border-radius: 50%;
+          margin-right: 8px;
+          background-color: $color-accent;
+        }
+      }
+
+      span:nth-child(2)::after {
+        background-color: v-bind('secondDotColor');
+      }
+      span:nth-child(3)::after {
+        background-color: v-bind('thirdDotColor');
+      }
     }
 
     h6 {
