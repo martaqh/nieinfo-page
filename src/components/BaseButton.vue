@@ -47,8 +47,12 @@ const componentVariant = computed(() => {
   border: 2px solid $color-accent;
   border-radius: $border-radius;
 
-  @include small {
+  @include medium {
     font-size: 1rem;
+  }
+
+  @include small {
+    font-size: 0.9rem;
   }
 
   &:hover {

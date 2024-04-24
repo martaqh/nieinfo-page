@@ -84,7 +84,7 @@ onMounted(() => {
     font-weight: $font-weight-main;
 
     @include medium {
-      padding: 0 48px;
+      padding-left: 48px;
     }
 
     &__text {
@@ -118,7 +118,7 @@ onMounted(() => {
         -webkit-text-fill-color: transparent;
 
         @include medium {
-          font-size: 2.8rem;
+          font-size: 2.6rem;
         }
 
         @include small {
@@ -152,7 +152,9 @@ onMounted(() => {
       min-width: 376px;
 
       @include medium {
-        width: 20%;
+        min-width: 0;
+        width: 376px;
+        max-height: 50%;
       }
 
       @include small {
@@ -178,7 +180,7 @@ onMounted(() => {
           text-shadow: $text-shadow;
 
           @include medium {
-            font-size: 2.2rem;
+            font-size: 2rem;
           }
         }
 
@@ -187,7 +189,7 @@ onMounted(() => {
           top: 130px;
 
           @include medium {
-            left: 0px;
+            left: -10px;
           }
         }
 
@@ -195,12 +197,9 @@ onMounted(() => {
           left: 420px;
           top: 130px;
 
-          @include large {
-            display: none;
-          }
-
           @include medium {
-            display: none;
+            left: 260px;
+            top: 30px;
           }
         }
 
@@ -209,7 +208,7 @@ onMounted(() => {
           top: 40px;
 
           @include medium {
-            left: 50px;
+            left: 30px;
             top: 60px;
           }
         }
@@ -227,11 +226,9 @@ onMounted(() => {
           left: 490px;
           top: 220px;
 
-          @include large {
-            display: none;
-          }
           @include medium {
-            display: none;
+            left: 300px;
+            top: 120px;
           }
         }
 
@@ -239,9 +236,6 @@ onMounted(() => {
           left: 420px;
           top: 310px;
 
-          @include large {
-            display: none;
-          }
           @include medium {
             display: none;
           }
@@ -263,4 +257,3 @@ onMounted(() => {
   }
 }
 </style>
-@/sanity/sanityClient
