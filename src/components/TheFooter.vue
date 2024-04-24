@@ -67,6 +67,11 @@ const links = {
     align-items: center;
     justify-content: flex-end;
     gap: 12px;
+
+    img {
+      width: 24px;
+      height: 24px;
+    }
   }
 }
 </style>
