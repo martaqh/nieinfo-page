@@ -1,13 +1,16 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import BaseButton from '@/components/BaseButton.vue'
+import ProgressCircle from '@/components/ProgressCircle.vue'
 import imageUrlBuilder from '@sanity/image-url'
 import { client } from '@/sanity/sanityClient'
 
 interface Props {
   number: number
+  totalBonuses: number
   reverse: boolean
   title: string
+  learningStage: string
   buttonLabel: string
   imageUrl: any
   bonusUrl: string
@@ -27,14 +30,6 @@ function urlFor(source: string) {
 const isEven = computed(() => {
   return props.number % 2 === 0
 })
-
-const secondDotColor = computed(() => {
-  return props.number >= 2 ? '#38bcd6' : 'white'
-})
-
-const thirdDotColor = computed(() => {
-  return props.number === 3 ? '#38bcd6' : 'white'
-})
 </script>
 
 <template>
@@ -42,12 +37,10 @@ const thirdDotColor = computed(() => {
     <img class="bonus-display__image" :src="urlFor(imageUrl).url()" />
     <div class="bonus-display__text">
       <div class="bonus-display__text__level">
-        <span></span>
-        <span></span>
-        <span></span>
+        <ProgressCircle :max-value="props.totalBonuses" :current-value="props.number" />
+        <h6>{{ learningStage }}</h6>
       </div>
 
-      <h6>#bonus {{ number }}</h6>
       <h2>{{ title }}</h2>
       <p>
         {{ description }}
@@ -101,33 +94,19 @@ const thirdDotColor = computed(() => {
 
     &__level {
       display: flex;
-      span {
-        &::after {
-          content: '';
-          display: inline-block;
-          width: 0.5rem;
-          height: 0.5rem;
-          border-radius: 50%;
-          margin-right: 8px;
-          background-color: $color-accent;
-        }
-      }
-
-      span:nth-child(2)::after {
-        background-color: v-bind('secondDotColor');
-      }
-      span:nth-child(3)::after {
-        background-color: v-bind('thirdDotColor');
-      }
-    }
-
-    h6 {
-      font-size: 2rem;
+      align-items: center;
+      gap: 24px;
       font-weight: 200;
-      color: $color-text-light;
 
-      @include medium {
-        font-size: 1.5rem;
+      h6 {
+        font-size: 1.2rem;
+
+        color: $color-text-light;
+        text-transform: uppercase;
+
+        @include medium {
+          font-size: 1rem;
+        }
       }
     }
 
@@ -168,4 +147,3 @@ const thirdDotColor = computed(() => {
   }
 }
 </style>
-@/sanity/sanityClient
