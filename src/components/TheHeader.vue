@@ -24,6 +24,15 @@ const sortedNavLinks = computed(() => {
   return navLinks.value?.slice().sort((a: NavLink, b: NavLink) => a.orderNumber - b.orderNumber)
 })
 
+const desktopNavLinks = computed(() => {
+  const navLinks = sortedNavLinks.value?.slice() || []
+  if (navLinks.length > 0) {
+    navLinks.shift()
+  }
+
+  return navLinks
+})
+
 const menuModal = ref<HTMLDialogElement | null>(null)
 
 const openModal = () => {
@@ -32,7 +41,6 @@ const openModal = () => {
   }
 }
 
-// Method to close the dialog
 const closeModal = () => {
   if (menuModal.value) {
     menuModal.value.close()
@@ -52,7 +60,7 @@ onMounted(() => {
 
     <nav class="header__nav">
       <ul>
-        <li v-for="link of sortedNavLinks" :key="link.orderNumber">
+        <li v-for="link of desktopNavLinks" :key="link.orderNumber">
           <NavLink>{{ link.label }}</NavLink>
         </li>
       </ul>
