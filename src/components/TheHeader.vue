@@ -25,12 +25,7 @@ const sortedNavLinks = computed(() => {
 })
 
 const desktopNavLinks = computed(() => {
-  const navLinks = sortedNavLinks.value?.slice() || []
-  if (navLinks.length > 0) {
-    navLinks.shift()
-  }
-
-  return navLinks
+  return sortedNavLinks.value?.filter((link: NavLink) => link.path !== '/')
 })
 
 const menuModal = ref<HTMLDialogElement | null>(null)
