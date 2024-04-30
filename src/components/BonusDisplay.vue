@@ -83,7 +83,7 @@ const isEven = computed(() => {
 
     @include small {
       max-height: 500px;
-      width: min-content;
+      min-width: 0;
     }
   }
 
