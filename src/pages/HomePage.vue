@@ -252,6 +252,10 @@ onMounted(() => {
     flex-direction: column;
     gap: 48px;
 
+    @include small {
+      gap: 80px;
+    }
+
     strong {
       text-transform: uppercase;
       font-weight: 700;
