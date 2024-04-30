@@ -8,7 +8,7 @@ import { client } from '@/sanity/sanityClient'
 interface Props {
   number: number
   totalBonuses: number
-  reverse: boolean
+  reverse?: boolean
   title: string
   learningStage: string
   buttonLabel: string

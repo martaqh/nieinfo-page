@@ -15,7 +15,6 @@ const gradientStyle = computed(() => {
   return `radial-gradient(closest-side, #151f21 80%, transparent 82% 100%),
     conic-gradient(#38bcd6 ${progressLevel.value}%, #353636 0)`
 })
-console.log(gradientStyle.value)
 </script>
 
 <template>

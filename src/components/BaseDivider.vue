@@ -1,6 +1,6 @@
 <script setup lang="ts">
 interface Props {
-  reverse: boolean
+  reverse?: boolean
 }
 
 withDefaults(defineProps<Props>(), {
