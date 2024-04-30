@@ -67,9 +67,9 @@ onMounted(() => {
       </BaseButton>
 
       <ul class="header__nav--mobile__links">
-        <li><NavLink>O mnie</NavLink></li>
-        <li><NavLink>Produkty</NavLink></li>
-        <li><NavLink>Kontakt</NavLink></li>
+        <li v-for="link of sortedNavLinks" :key="link.orderNumber">
+          <NavLink>{{ link.label }}</NavLink>
+        </li>
       </ul>
     </dialog>
   </header>
@@ -105,7 +105,6 @@ onMounted(() => {
 
       @include small {
         max-width: 250px;
-
         padding: 0;
       }
 
@@ -147,13 +146,17 @@ onMounted(() => {
 
     &--mobile {
       width: 100%;
-      min-height: 100vh;
-      background: $color-background;
-      opacity: 0.9;
       border: none;
       color: white;
-      font-size: 2rem;
+      background-color: inherit;
+      font-size: 1.2rem;
       margin: 0;
+
+      &::backdrop {
+        min-height: 100vh;
+        background: $color-background;
+        opacity: 0.9;
+      }
 
       &__links {
         height: 100%;
@@ -161,9 +164,9 @@ onMounted(() => {
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: flex-start;
-        gap: 64px;
-        margin-top: 120px;
+        justify-content: center;
+        gap: 48px;
+        padding: 48px 0;
       }
 
       &__close {
