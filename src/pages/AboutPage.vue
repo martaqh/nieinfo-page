@@ -33,10 +33,6 @@ const sortedFacts = computed(() => {
   return facts.value?.slice().sort((a: Fact, b: Fact) => a.orderNumber - b.orderNumber)
 })
 
-const factsHeading = computed(() => {
-  return headings.value?.factsHeading
-})
-
 onMounted(() => {
   fetchFacts()
   fetchHeadings()
@@ -47,7 +43,7 @@ onMounted(() => {
   <BasePage>
     <section class="about-page__facts">
       <h2 class="about-page__facts__heading">
-        {{ factsHeading }}
+        {{ headings.factsHeading }}
       </h2>
       <FactItem
         v-for="item in sortedFacts"
@@ -63,13 +59,13 @@ onMounted(() => {
 .about-page {
   &__facts {
     margin: 80px;
+
     &__heading {
       text-align: center;
       font-family: $font-title;
       margin-bottom: 48px;
       font-size: 3rem;
       font-weight: 800;
-      line-height: 120%;
       background: $text-gradient;
       background-clip: text;
       -webkit-text-fill-color: transparent;

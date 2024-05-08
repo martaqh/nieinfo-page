@@ -29,6 +29,7 @@ const iconClass = computed(() => {
   gap: 24px;
   transition: color 1s ease-out 100ms;
   transition: font-size 1s ease-out 100ms;
+  line-height: 140%;
 
   span {
     font-size: 32px;
