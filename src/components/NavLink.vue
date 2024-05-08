@@ -18,7 +18,7 @@ const componentVariant = computed(() => {
     :is="componentVariant"
     class="nav-link"
     :to="to"
-    :href="href"
+    :href="href || to"
     :target="blank ? blank : null"
   >
     <slot></slot>

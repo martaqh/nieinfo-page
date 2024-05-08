@@ -56,7 +56,7 @@ onMounted(() => {
     <nav class="header__nav">
       <ul>
         <li v-for="link of desktopNavLinks" :key="link.orderNumber">
-          <NavLink>{{ link.label }}</NavLink>
+          <NavLink :to="link.path">{{ link.label }}</NavLink>
         </li>
       </ul>
     </nav>
@@ -71,7 +71,7 @@ onMounted(() => {
 
       <ul class="header__nav--mobile__links">
         <li v-for="link of sortedNavLinks" :key="link.orderNumber">
-          <NavLink>{{ link.label }}</NavLink>
+          <NavLink :to="link.path">{{ link.label }}</NavLink>
         </li>
       </ul>
     </dialog>
