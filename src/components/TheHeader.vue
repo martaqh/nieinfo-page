@@ -71,7 +71,7 @@ onMounted(() => {
 
       <ul class="header__nav--mobile__links">
         <li v-for="link of sortedNavLinks" :key="link.orderNumber">
-          <NavLink :to="link.path">{{ link.label }}</NavLink>
+          <NavLink :to="link.path" @click="closeModal">{{ link.label }}</NavLink>
         </li>
       </ul>
     </dialog>
