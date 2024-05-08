@@ -54,13 +54,6 @@ onMounted(() => {
         :icon="item.iconName"
       >
         <SocialLinks v-if="item.iconName === 'groups'" />
-        <a
-          v-if="item.iconName === 'videocam'"
-          href="http://youtube.com/nieinformatyk"
-          target="blank"
-        >
-          Sprawdź, o czym mówię!
-        </a>
       </FactItem>
     </section>
   </BasePage>
@@ -71,6 +64,14 @@ onMounted(() => {
   &__facts-list {
     margin: 80px;
 
+    @include medium {
+      margin: 64px 48px;
+    }
+
+    @include small {
+      margin: 64px 24px;
+    }
+
     &__heading {
       text-align: center;
       font-family: $font-title;
@@ -80,8 +81,13 @@ onMounted(() => {
       background: $text-gradient;
       background-clip: text;
       -webkit-text-fill-color: transparent;
-      span {
-        font-size: 4rem;
+
+      @include medium {
+        font-size: 3rem;
+      }
+
+      @include small {
+        font-size: 2rem;
       }
     }
     a {
