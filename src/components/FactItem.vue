@@ -11,12 +11,18 @@ const props = defineProps<Props>()
 const iconClass = computed(() => {
   return `material-symbols-outlined ${props.icon}`
 })
+
+const isLink = computed(() => {
+  return props.icon === 'videocam'
+})
 </script>
 
 <template>
   <div class="fact-item">
     <span :class="iconClass">{{ props.icon }}</span>
-    <p>{{ text }}</p>
+    <a v-if="isLink" href="http://youtube.com/nieinformatyk">{{ text }}</a>
+    <p v-else>{{ text }}</p>
+
     <slot />
   </div>
 </template>
@@ -34,6 +40,29 @@ const iconClass = computed(() => {
 
   span {
     font-size: 32px;
+
+    @include medium {
+      font-size: 28px;
+    }
+
+    @include small {
+      font-size: 24px;
+    }
+  }
+
+  a {
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  @include medium {
+    font-size: 1rem;
+  }
+
+  @include small {
+    font-size: 0.9rem;
+    align-items: flex-start;
   }
 
   &:hover {
@@ -41,6 +70,14 @@ const iconClass = computed(() => {
     font-size: 1.2rem;
     color: $color-accent;
     text-shadow: $text-shadow;
+
+    @include medium {
+      font-size: 1.1rem;
+    }
+
+    @include small {
+      font-size: 1rem;
+    }
   }
 }
 </style>
