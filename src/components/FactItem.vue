@@ -17,6 +17,7 @@ const iconClass = computed(() => {
   <div class="fact-item">
     <span :class="iconClass">{{ props.icon }}</span>
     <p>{{ text }}</p>
+    <slot />
   </div>
 </template>
 

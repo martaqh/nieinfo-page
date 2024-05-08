@@ -1,30 +1,7 @@
 <script setup lang="ts">
-import BaseButton from '@/components/BaseButton.vue'
 import BaseDivider from '@/components/BaseDivider.vue'
 import NavLink from '@/components/NavLink.vue'
-
-const links = {
-  youtube: {
-    path: 'http://youtube.com/nieinformatyk',
-    icon: '/assets/social-media/youtube.svg'
-  },
-  linkedin: {
-    path: 'https://www.linkedin.com/in/darekbutkiewicz/',
-    icon: '/assets/social-media/linkedin.svg'
-  },
-  facebook: {
-    path: 'http://facebook.com/nieinformatyk',
-    icon: '/assets/social-media/facebook.svg'
-  },
-  instagram: {
-    path: 'http://instagram.com/nieinformatyk',
-    icon: '/assets/social-media/instagram.svg'
-  },
-  twitter: {
-    path: 'http://x.com/nieinformatyk',
-    icon: '/assets/social-media/x-twitter.svg'
-  }
-}
+import SocialLinks from '@/components/SocialLinks.vue'
 </script>
 
 <template>
@@ -32,11 +9,7 @@ const links = {
     <BaseDivider reverse />
     <div class="footer__content">
       <span>kontakt@nieinformatyk.pl</span>
-      <nav>
-        <BaseButton v-for="link in links" :key="link.path" :href="link.path" social
-          ><img :src="link.icon" />
-        </BaseButton>
-      </nav>
+      <SocialLinks />
       <NavLink href="https://nieinformatyk.pl/regulamin" blank>Regulamin</NavLink>
     </div>
   </footer>
@@ -59,18 +32,6 @@ const links = {
     @include small {
       flex-direction: column;
       gap: 32px;
-    }
-  }
-
-  nav {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    gap: 12px;
-
-    img {
-      width: 24px;
-      height: 24px;
     }
   }
 }
