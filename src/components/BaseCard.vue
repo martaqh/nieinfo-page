@@ -17,7 +17,8 @@ defineProps<Props>()
 <style lang="scss">
 .base-card {
   position: relative;
-  height: 100%;
+  border: 1px solid $color-accent;
+  border-radius: $border-radius;
 
   &__title {
     display: block;
@@ -30,10 +31,11 @@ defineProps<Props>()
     position: absolute;
     left: -32px;
     top: -32px;
+    border-radius: $border-radius;
+    min-width: 50%;
   }
 
   &__text {
-    border: 1px solid $color-accent;
     padding: 48px;
   }
 

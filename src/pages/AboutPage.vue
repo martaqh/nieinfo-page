@@ -103,8 +103,6 @@ onMounted(() => {
 
 <style lang="scss" scoped>
 .about {
-  //padding: 0 80px;
-
   h2 {
     font-family: $font-title;
     font-weight: 600;
@@ -114,7 +112,7 @@ onMounted(() => {
   }
 
   section {
-    margin-bottom: 160px;
+    margin-bottom: 200px;
   }
 
   &__facts-list {
