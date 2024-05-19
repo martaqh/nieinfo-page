@@ -5,6 +5,8 @@ import BaseButton from '@/components/BaseButton.vue'
 import BaseDivider from '@/components/BaseDivider.vue'
 import BonusDisplay from '@/components/BonusDisplay.vue'
 import { getBonuses, getHeroData } from '@/sanity/service/HomePage'
+import AboutPage from '@/pages/AboutPage.vue'
+import ContactView from '@/pages/ContactView.vue'
 
 const bonuses = ref()
 
@@ -74,6 +76,8 @@ onMounted(() => {
         </BonusDisplay>
       </section>
     </div>
+    <AboutPage />
+    <ContactView />
   </BasePage>
 </template>
 
