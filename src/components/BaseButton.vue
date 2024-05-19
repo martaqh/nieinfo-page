@@ -1,11 +1,14 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 
+type Type = 'button' | 'submit'
+
 interface Props {
   to?: string
   href?: string
   social?: boolean
   plain?: boolean
+  type?: Type
 }
 
 const props = defineProps<Props>()
@@ -27,6 +30,7 @@ const componentVariant = computed(() => {
     :is="componentVariant"
     :href="href || to"
     :to="to"
+    :type="componentVariant === 'button' && props.type"
     :class="{ social: social, plain: plain }"
   >
     <div class="base-button__slot">
