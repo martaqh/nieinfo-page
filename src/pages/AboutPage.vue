@@ -5,6 +5,7 @@ import FactItem from '@/components/FactItem.vue'
 import { getFacts, getValues, getAboutData } from '@/sanity/service/AboutPage'
 import SocialLinks from '@/components/SocialLinks.vue'
 import BaseCard from '@/components/BaseCard.vue'
+import SectionTitle from '@/components/SectionTitle.vue'
 
 interface Fact {
   orderNumber: number
@@ -67,9 +68,9 @@ onMounted(() => {
   <BasePage>
     <div class="about">
       <section class="about__facts-list">
-        <h2 class="about__facts-list__heading">
+        <SectionTitle class="about__facts-list__heading">
           {{ about?.factsHeading }}
-        </h2>
+        </SectionTitle>
 
         <FactItem
           v-for="item in sortedFacts"
@@ -81,13 +82,13 @@ onMounted(() => {
         </FactItem>
       </section>
       <section class="about__knowledge-sharing">
-        <h2 class="about__knowledge-sharing__heading">{{ about?.knowledgeSharingHeading }}</h2>
+        <SectionTitle>{{ about?.knowledgeSharingHeading }}</SectionTitle>
         <p>{{ about?.knowledgeSharingDescription }}</p>
       </section>
       <section class="about__values">
-        <h2 class="about__values__heading">
+        <SectionTitle>
           {{ about?.valuesHeading }}
-        </h2>
+        </SectionTitle>
         <div class="about__values__cards">
           <BaseCard
             v-for="value of sortedValues"
@@ -103,14 +104,6 @@ onMounted(() => {
 
 <style lang="scss" scoped>
 .about {
-  h2 {
-    font-family: $font-title;
-    font-weight: 600;
-    background: $text-gradient;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-
   section {
     margin-bottom: 200px;
   }
@@ -132,18 +125,8 @@ onMounted(() => {
     }
 
     &__heading {
-      text-align: center;
-      font-family: $font-title;
+      text-align: end;
       margin-bottom: 48px;
-      font-size: 3.5rem;
-
-      @include medium {
-        font-size: 3rem;
-      }
-
-      @include small {
-        font-size: 2rem;
-      }
     }
   }
   &__knowledge-sharing {
@@ -161,10 +144,6 @@ onMounted(() => {
     display: flex;
     flex-direction: column;
     gap: 120px;
-
-    &__heading {
-      font-size: 3rem;
-    }
 
     &__cards {
       display: grid;

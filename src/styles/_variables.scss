@@ -10,6 +10,8 @@ $font-weight-main: 300;
 $color-background: #151f21;
 
 $color-accent: #38bcd6;
+$color-accent-light: #c0faff;
+
 $color-text: #fff;
 $color-text-light: #c2cfd1;
 $color-text-reverse: $color-background;
@@ -40,6 +42,16 @@ $text-gradient: linear-gradient(
   hsl(191deg 62% 67%) 69%,
   hsl(191deg 64% 61%) 79%,
   hsl(190deg 66% 53%) 100%
+);
+
+$text-gradient-secondary: linear-gradient(
+  270deg,
+  hsl(190deg 66% 53%) 0%,
+  hsl(191deg 63% 66%) 29%,
+  hsl(192deg 61% 75%) 43%,
+  hsl(192deg 60% 84%) 57%,
+  hsl(193deg 60% 92%) 71%,
+  hsl(0deg 0% 100%) 100%
 );
 
 $text-shadow: $color-accent 1px 0 10px;

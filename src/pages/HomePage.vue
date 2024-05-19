@@ -7,6 +7,7 @@ import BonusDisplay from '@/components/BonusDisplay.vue'
 import { getBonuses, getHeroData } from '@/sanity/service/HomePage'
 import AboutPage from '@/pages/AboutPage.vue'
 import ContactView from '@/pages/ContactView.vue'
+import SectionTitle from '@/components/SectionTitle.vue'
 
 const bonuses = ref()
 
@@ -39,7 +40,7 @@ onMounted(() => {
     <div class="home">
       <section class="home__hero">
         <div v-if="hero" class="home__hero__text">
-          <h1 class="home__hero__text--title">{{ hero[0].title }}</h1>
+          <SectionTitle size="large">{{ hero[0].title }}</SectionTitle>
           <p class="home__hero__text--subtitle">{{ hero[0].subtitle }}</p>
 
           <BaseButton href="#bonuses">
@@ -113,32 +114,10 @@ onMounted(() => {
         text-align: center;
       }
 
-      &--title {
-        font-family: $font-title;
-        margin-bottom: 48px;
-        font-size: 4rem;
-        font-weight: 800;
-        line-height: 120%;
-        background: $text-gradient;
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
-
-        @include medium {
-          font-size: 2.6rem;
-        }
-
-        @include small {
-          font-size: 2rem;
-        }
-
-        @include x-small {
-          font-size: 2.2rem;
-        }
-      }
-
       &--subtitle {
         font-size: 1.2rem;
         line-height: 130%;
+        margin-top: 48px;
         margin-bottom: 80px;
 
         @include medium {
