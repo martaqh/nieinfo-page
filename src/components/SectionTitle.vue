@@ -33,7 +33,7 @@ const titleType = computed(() => {
   font-family: $font-title;
   font-weight: 600;
   line-height: 120%;
-  font-size: 3.5rem;
+  font-size: 3rem;
   text-align: start;
 
   &.main {

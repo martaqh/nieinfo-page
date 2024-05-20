@@ -38,7 +38,7 @@ onMounted(() => {
 <template>
   <BasePage>
     <div class="home">
-      <section class="home__hero">
+      <section class="home__hero" id="hero">
         <div v-if="hero" class="home__hero__text">
           <SectionTitle size="large">{{ hero[0].title }}</SectionTitle>
           <p class="home__hero__text--subtitle">{{ hero[0].subtitle }}</p>

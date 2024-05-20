@@ -68,7 +68,7 @@ onMounted(() => {
   <BasePage>
     <div class="about">
       <section class="about__facts-list">
-        <SectionTitle class="about__facts-list__heading">
+        <SectionTitle id="about" class="about__facts-list__heading">
           {{ about?.factsHeading }}
         </SectionTitle>
 

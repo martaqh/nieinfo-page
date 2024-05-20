@@ -1,14 +1,14 @@
 <script setup lang="ts">
-import { RouterView } from 'vue-router'
 import TheHeader from '@/components/TheHeader.vue'
 import TheFooter from '@/components/TheFooter.vue'
+import HomePage from '@/pages/HomePage.vue'
 </script>
 
 <template>
   <main class="app">
     <TheHeader />
 
-    <RouterView />
+    <HomePage />
     <TheFooter />
   </main>
 </template>

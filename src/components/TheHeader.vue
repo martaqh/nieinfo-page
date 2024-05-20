@@ -25,7 +25,7 @@ const sortedNavLinks = computed(() => {
 })
 
 const desktopNavLinks = computed(() => {
-  return sortedNavLinks.value?.filter((link: NavLink) => link.path !== '/')
+  return sortedNavLinks.value?.filter((link: NavLink) => link.path !== '#hero')
 })
 
 const menuModal = ref<HTMLDialogElement | null>(null)
@@ -49,14 +49,14 @@ onMounted(() => {
 
 <template>
   <header class="header">
-    <NavLink class="header__logo" to="/">
+    <NavLink class="header__logo" href="#">
       <img src="/src/assets/logo.svg" />
     </NavLink>
 
     <nav class="header__nav">
       <ul>
         <li v-for="link of desktopNavLinks" :key="link.orderNumber">
-          <NavLink :to="link.path">{{ link.label }}</NavLink>
+          <NavLink href="#contact">{{ link.label }}</NavLink>
         </li>
       </ul>
     </nav>
@@ -71,7 +71,7 @@ onMounted(() => {
 
       <ul class="header__nav--mobile__links">
         <li v-for="link of sortedNavLinks" :key="link.orderNumber">
-          <NavLink :to="link.path" @click="closeModal">{{ link.label }}</NavLink>
+          <NavLink href="#contact" @click="closeModal">{{ link.label }}</NavLink>
         </li>
       </ul>
     </dialog>

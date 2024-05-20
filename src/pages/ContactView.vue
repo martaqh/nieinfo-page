@@ -4,7 +4,7 @@ import BaseButton from '@/components/BaseButton.vue'
 </script>
 
 <template>
-  <div class="contact-view">
+  <section class="contact-view" id="contact">
     <SectionTitle class="contact-view__title">Napisz do mnie</SectionTitle>
 
     <form action="https://formsubmit.co/2f9079899edc929c8215d823594a41e6" method="post">
@@ -19,7 +19,7 @@ import BaseButton from '@/components/BaseButton.vue'
 
       <BaseButton type="submit"> Wyślij </BaseButton>
     </form>
-  </div>
+  </section>
 </template>
 
 <style lang="scss" scoped>
