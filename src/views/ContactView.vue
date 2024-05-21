@@ -28,7 +28,7 @@ import BaseButton from '@/components/BaseButton.vue'
   display: grid;
 
   &__title {
-    text-align: center;
+    justify-self: center;
     margin-bottom: 48px;
   }
 

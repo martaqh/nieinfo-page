@@ -56,6 +56,11 @@ nav {
   img {
     width: 24px;
     height: 24px;
+
+    @include medium {
+      width: 20px;
+      height: 20px;
+    }
   }
 }
 </style>

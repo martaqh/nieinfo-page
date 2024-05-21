@@ -57,7 +57,7 @@ const isLink = computed(() => {
   }
 
   @include medium {
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
 
   @include small {

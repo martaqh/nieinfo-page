@@ -1,8 +1,7 @@
 <script setup lang="ts">
 import { ref, onMounted, computed } from 'vue'
-import BasePage from '@/pages/BasePage.vue'
 import FactItem from '@/components/FactItem.vue'
-import { getFacts, getValues, getAboutData } from '@/sanity/service/AboutPage'
+import { getFacts, getValues, getAboutData } from '@/sanity/service/AboutView'
 import SocialLinks from '@/components/SocialLinks.vue'
 import BaseCard from '@/components/BaseCard.vue'
 import SectionTitle from '@/components/SectionTitle.vue'
@@ -65,41 +64,41 @@ onMounted(() => {
 </script>
 
 <template>
-  <BasePage>
-    <div class="about">
-      <section class="about__facts-list">
-        <SectionTitle id="about" class="about__facts-list__heading">
-          {{ about?.factsHeading }}
-        </SectionTitle>
+  <div class="about">
+    <section class="about__facts-list">
+      <SectionTitle id="about" class="about__facts-list__heading">
+        {{ about?.factsHeading }}
+      </SectionTitle>
 
-        <FactItem
-          v-for="item in sortedFacts"
-          :key="item.orderNumber"
-          :text="item.text"
-          :icon="item.iconName"
-        >
-          <SocialLinks v-if="item.iconName === 'groups'" />
-        </FactItem>
-      </section>
-      <section class="about__knowledge-sharing">
-        <SectionTitle>{{ about?.knowledgeSharingHeading }}</SectionTitle>
-        <p>{{ about?.knowledgeSharingDescription }}</p>
-      </section>
-      <section class="about__values">
-        <SectionTitle>
-          {{ about?.valuesHeading }}
-        </SectionTitle>
-        <div class="about__values__cards">
-          <BaseCard
-            v-for="value of sortedValues"
-            :key="value.orderNumber"
-            :title="value.name"
-            :text="value.description"
-          />
-        </div>
-      </section>
-    </div>
-  </BasePage>
+      <FactItem
+        v-for="item in sortedFacts"
+        :key="item.orderNumber"
+        :text="item.text"
+        :icon="item.iconName"
+      >
+        <SocialLinks v-if="item.iconName === 'groups'" />
+      </FactItem>
+    </section>
+    <section class="about__knowledge-sharing">
+      <SectionTitle class="about__knowledge-sharing__title">{{
+        about?.knowledgeSharingHeading
+      }}</SectionTitle>
+      <p class="about__knowledge-sharing__text">{{ about?.knowledgeSharingDescription }}</p>
+    </section>
+    <section class="about__values">
+      <SectionTitle>
+        {{ about?.valuesHeading }}
+      </SectionTitle>
+      <div class="about__values__cards">
+        <BaseCard
+          v-for="value of sortedValues"
+          :key="value.orderNumber"
+          :title="value.name"
+          :text="value.description"
+        />
+      </div>
+    </section>
+  </div>
 </template>
 
 <style lang="scss" scoped>
@@ -110,13 +109,8 @@ onMounted(() => {
 
   &__facts-list {
     margin-top: 80px;
-
     @include medium {
-      margin: 64px 48px;
-    }
-
-    @include small {
-      margin: 64px 24px;
+      font-size: 1rem;
     }
 
     a {
@@ -134,9 +128,24 @@ onMounted(() => {
     display: flex;
     gap: 180px;
 
-    &__heading {
-      width: min-content;
-      font-size: 3rem;
+    @include medium {
+      flex-direction: column;
+      gap: 80px;
+    }
+
+    @include small {
+      flex-direction: column;
+      gap: 64px;
+    }
+
+    &__text {
+      @include medium {
+        font-size: 1rem;
+      }
+
+      @include small {
+        font-size: 0.9rem;
+      }
     }
   }
   &__values {

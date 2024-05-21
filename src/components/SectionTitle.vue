@@ -35,6 +35,10 @@ const titleType = computed(() => {
   line-height: 120%;
   font-size: 3rem;
   text-align: start;
+  background: $text-gradient-secondary;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  width: fit-content;
 
   &.main {
     font-weight: 800;
@@ -42,6 +46,19 @@ const titleType = computed(() => {
     background: $text-gradient;
     background-clip: text;
     -webkit-text-fill-color: transparent;
+
+    @include medium {
+      font-size: 3rem;
+    }
+
+    @include small {
+      font-size: 2.5rem;
+      text-align: center;
+    }
+
+    @include x-small {
+      font-size: 2rem;
+    }
   }
 
   &.small {

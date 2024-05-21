@@ -1,14 +1,29 @@
 <script setup lang="ts">
 import TheHeader from '@/components/TheHeader.vue'
 import TheFooter from '@/components/TheFooter.vue'
-import HomePage from '@/pages/HomePage.vue'
+
+import BaseContainer from '@/components/BaseContainer.vue'
+
+import BaseDivider from '@/components/BaseDivider.vue'
+
+import AboutView from '@/views/AboutView.vue'
+import ContactView from '@/views/ContactView.vue'
+import HeroView from '@/views/HeroView.vue'
+import BonusesView from '@/views/BonusesView.vue'
 </script>
 
 <template>
   <main class="app">
     <TheHeader />
 
-    <HomePage />
+    <BaseContainer>
+      <HeroView />
+      <BonusesView />
+      <BaseDivider reverse />
+      <AboutView />
+      <BaseDivider />
+      <ContactView />
+    </BaseContainer>
     <TheFooter />
   </main>
 </template>

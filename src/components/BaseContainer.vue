@@ -1,5 +1,5 @@
 <template>
-  <div class="base-page">
+  <div class="base-container">
     <slot></slot>
   </div>
 </template>
@@ -16,9 +16,14 @@
   }
 }
 
-.base-page {
+.base-container {
   max-width: 1200px;
   margin: 0 auto;
   animation: transitionIn 1.5s;
+  padding: 0 80px;
+
+  @include medium {
+    padding: 0 48px;
+  }
 }
 </style>
