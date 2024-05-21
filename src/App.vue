@@ -15,7 +15,6 @@ import BonusesView from '@/views/BonusesView.vue'
 <template>
   <main class="app">
     <TheHeader />
-
     <BaseContainer>
       <HeroView />
       <BonusesView />

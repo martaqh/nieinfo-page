@@ -50,10 +50,10 @@ onMounted(() => {
   display: flex;
   justify-content: space-between;
   font-weight: $font-weight-main;
-  margin: 0 -80px;
+  padding-left: 48px;
 
   @include medium {
-    padding-left: 48px;
+    padding-left: 0;
   }
 
   &__text {

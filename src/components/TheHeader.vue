@@ -86,7 +86,7 @@ onMounted(() => {
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   z-index: 1;
-  max-width: 1400px;
+  max-width: 1600px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -94,6 +94,7 @@ onMounted(() => {
   font-size: 1.1rem;
   font-weight: 400;
   padding: 48px 0;
+  width: 100%;
 
   @include small {
     padding: 32px 24px;

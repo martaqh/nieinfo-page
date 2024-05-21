@@ -17,10 +17,10 @@
 }
 
 .base-container {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
   animation: transitionIn 1.5s;
-  padding: 0 80px;
+  // padding: 0 48px;
 
   @include medium {
     padding: 0 48px;
