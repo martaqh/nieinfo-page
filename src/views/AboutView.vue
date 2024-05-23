@@ -177,6 +177,7 @@ onMounted(() => {
 
     @include small {
       gap: 80px;
+      font-size: 0.9rem;
     }
 
     &__heading {

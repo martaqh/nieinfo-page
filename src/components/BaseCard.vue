@@ -32,13 +32,18 @@ defineProps<Props>()
     font-size: 3rem;
     opacity: 0.2;
 
+    @include medium {
+      font-size: 2.2rem;
+    }
+
     @include small {
-      font-size: 1.2rem;
+      font-size: 2rem;
+      opacity: 0.3;
     }
   }
 
   &__text {
-    @include small {
+    @include medium {
       font-size: 0.9rem;
     }
   }

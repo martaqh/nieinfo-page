@@ -40,8 +40,11 @@ const isLink = computed(() => {
   transition: font-size 1s ease-out 100ms;
   line-height: 140%;
 
-  @include small {
-    padding: 12px 0;
+  &:hover {
+    font-weight: 400;
+    font-size: 1.2rem;
+    color: $color-accent;
+    text-shadow: $text-shadow;
   }
 
   span {
@@ -67,16 +70,16 @@ const isLink = computed(() => {
   }
 
   @include small {
+    padding: 12px 0;
     font-size: 0.9rem;
     align-items: flex-start;
+
+    &:hover {
+      font-size: 0.9rem;
+      text-shadow: none;
+    }
   }
 
-  &:hover {
-    font-weight: 400;
-    font-size: 1.2rem;
-    color: $color-accent;
-    text-shadow: $text-shadow;
-  }
   &__text {
     display: flex;
     align-items: center;

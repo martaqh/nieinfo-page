@@ -25,7 +25,9 @@ import BaseButton from '@/components/BaseButton.vue'
 <style lang="scss" scoped>
 .contact-view {
   padding: 64px 0;
-  display: grid;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   scroll-margin-top: 80px;
 
   &__title {
