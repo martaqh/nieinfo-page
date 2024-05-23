@@ -64,9 +64,9 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="about">
+  <div class="about" id="about">
     <section class="about__facts-list">
-      <SectionTitle id="about" class="about__facts-list__heading">
+      <SectionTitle class="about__facts-list__heading">
         {{ about?.factsHeading }}
       </SectionTitle>
 
@@ -104,6 +104,7 @@ onMounted(() => {
 <style lang="scss" scoped>
 .about {
   padding: 0 48px;
+  scroll-margin-top: 160px;
 
   @include medium {
     padding: 0;

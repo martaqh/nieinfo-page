@@ -26,6 +26,7 @@ import BaseButton from '@/components/BaseButton.vue'
 .contact-view {
   padding: 64px 0;
   display: grid;
+  scroll-margin-top: 80px;
 
   &__title {
     justify-self: center;
