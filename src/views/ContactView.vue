@@ -46,6 +46,7 @@ import BaseButton from '@/components/BaseButton.vue'
       margin-bottom: 32px;
       background: $color-background;
       border: 1px solid $color-accent;
+      border-radius: $border-radius;
 
       &:hover {
         outline: 2px solid $color-accent;
