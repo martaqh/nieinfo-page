@@ -80,16 +80,16 @@ onMounted(() => {
       </FactItem>
     </section>
     <section class="about__knowledge-sharing">
-      <SectionTitle class="about__knowledge-sharing__title">{{
+      <SectionTitle class="about__knowledge-sharing__heading">{{
         about?.knowledgeSharingHeading
       }}</SectionTitle>
       <p class="about__knowledge-sharing__text">{{ about?.knowledgeSharingDescription }}</p>
     </section>
     <section class="about__values">
-      <SectionTitle>
+      <SectionTitle class="about__values__heading">
         {{ about?.valuesHeading }}
       </SectionTitle>
-      <div class="about__values__cards">
+      <div class="about__values__cards-list">
         <BaseCard
           v-for="value of sortedValues"
           :key="value.orderNumber"
@@ -103,8 +103,25 @@ onMounted(() => {
 
 <style lang="scss" scoped>
 .about {
+  padding: 0 48px;
+
+  @include medium {
+    padding: 0;
+  }
+
+  @include small {
+    padding: 0;
+  }
   section {
     margin-bottom: 200px;
+
+    @include medium {
+      margin-bottom: 120px;
+    }
+
+    @include small {
+      margin-bottom: 120px;
+    }
   }
 
   &__facts-list {
@@ -113,14 +130,18 @@ onMounted(() => {
       font-size: 1rem;
     }
 
+    @include small {
+      margin-top: 64px;
+    }
+
     a {
       text-transform: uppercase;
       color: white;
     }
 
     &__heading {
-      text-align: end;
       margin-bottom: 48px;
+      text-align: end;
     }
   }
   &__knowledge-sharing {
@@ -129,13 +150,12 @@ onMounted(() => {
     gap: 180px;
 
     @include medium {
-      flex-direction: column;
-      gap: 80px;
+      gap: 64px;
     }
 
     @include small {
-      flex-direction: column;
       gap: 64px;
+      flex-direction: column;
     }
 
     &__text {
@@ -154,10 +174,29 @@ onMounted(() => {
     flex-direction: column;
     gap: 120px;
 
-    &__cards {
+    @include small {
+      gap: 80px;
+    }
+
+    &__heading {
+      text-align: center;
+
+      @include small {
+        text-align: start;
+      }
+    }
+
+    &__cards-list {
+      // padding: 0 48px;
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 48px;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      gap: 64px;
+
+      @include small {
+        display: flex;
+        flex-direction: column;
+      }
     }
   }
 }

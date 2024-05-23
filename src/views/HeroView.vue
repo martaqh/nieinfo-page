@@ -50,9 +50,14 @@ onMounted(() => {
   display: flex;
   justify-content: space-between;
   font-weight: $font-weight-main;
+
   padding-left: 48px;
 
   @include medium {
+    padding-left: 0;
+  }
+
+  @include small {
     padding-left: 0;
   }
 
@@ -72,7 +77,7 @@ onMounted(() => {
 
     @include small {
       width: 100%;
-      padding: 64px 24px;
+      padding: 64px 0;
       text-align: center;
     }
 
@@ -94,14 +99,12 @@ onMounted(() => {
 
   &__picture {
     position: relative;
-    width: 40%;
-    max-height: 70%;
+    max-width: 40%;
+    max-height: 50%;
     min-width: 376px;
 
     @include medium {
-      min-width: 0;
       width: 376px;
-      max-height: 50%;
     }
 
     @include small {
@@ -126,6 +129,10 @@ onMounted(() => {
         color: $color-accent;
         text-shadow: $text-shadow;
 
+        @include large {
+          font-size: 2.5rem;
+        }
+
         @include medium {
           font-size: 2rem;
         }
@@ -143,6 +150,11 @@ onMounted(() => {
       .gears {
         left: 420px;
         top: 130px;
+
+        @include large {
+          left: 340px;
+          top: 50px;
+        }
 
         @include medium {
           left: 260px;
@@ -173,6 +185,11 @@ onMounted(() => {
         left: 490px;
         top: 220px;
 
+        @include large {
+          left: 400px;
+          top: 150px;
+        }
+
         @include medium {
           left: 300px;
           top: 120px;
@@ -183,7 +200,7 @@ onMounted(() => {
         left: 420px;
         top: 310px;
 
-        @include medium {
+        @include large {
           display: none;
         }
       }

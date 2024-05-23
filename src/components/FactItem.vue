@@ -20,16 +20,18 @@ const isLink = computed(() => {
 <template>
   <div class="fact-item">
     <span :class="iconClass">{{ props.icon }}</span>
-    <a v-if="isLink" href="http://youtube.com/nieinformatyk">{{ text }}</a>
-    <p v-else>{{ text }}</p>
+    <div class="fact-item__text">
+      <a v-if="isLink" href="http://youtube.com/nieinformatyk">{{ text }}</a>
+      <p v-else>{{ text }}</p>
 
-    <slot />
+      <slot />
+    </div>
   </div>
 </template>
 
 <style lang="scss">
 .fact-item {
-  padding: 24px;
+  padding: 24px 0;
   font-size: 1.1rem;
   display: flex;
   align-items: center;
@@ -37,6 +39,10 @@ const isLink = computed(() => {
   transition: color 1s ease-out 100ms;
   transition: font-size 1s ease-out 100ms;
   line-height: 140%;
+
+  @include small {
+    padding: 12px 0;
+  }
 
   span {
     font-size: 32px;
@@ -70,13 +76,14 @@ const isLink = computed(() => {
     font-size: 1.2rem;
     color: $color-accent;
     text-shadow: $text-shadow;
-
-    @include medium {
-      font-size: 1.1rem;
-    }
+  }
+  &__text {
+    display: flex;
+    align-items: center;
 
     @include small {
-      font-size: 1rem;
+      flex-direction: column;
+      gap: 12px;
     }
   }
 }

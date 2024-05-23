@@ -94,7 +94,7 @@ onMounted(() => {
   font-size: 1.1rem;
   font-weight: 400;
   padding: 48px 0;
-  width: 100%;
+  // width: 100%;
 
   @include small {
     padding: 32px 24px;
