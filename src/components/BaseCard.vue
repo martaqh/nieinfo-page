@@ -17,30 +17,35 @@ defineProps<Props>()
 <style lang="scss">
 .base-card {
   position: relative;
-  border: 1px solid $color-accent;
   border-radius: $border-radius;
+  border-top-left-radius: -1.25rem;
+  padding: 8px;
+  transition: opacity 1s ease-out 100ms;
 
   &__title {
-    display: block;
-    text-align: center;
-    background-color: $color-accent;
-    color: $color-background;
-    font-weight: 500;
-    font-family: $font-title;
-    padding: 16px;
-    position: absolute;
-    left: -32px;
-    top: -32px;
     border-radius: $border-radius;
-    min-width: 50%;
+    text-transform: uppercase;
+    background-color: inherit;
+    color: $color-accent;
+    font-weight: 700;
+    font-family: $font-title;
+    font-size: 3rem;
+    opacity: 0.2;
+
+    @include small {
+      font-size: 1.2rem;
+    }
   }
 
   &__text {
-    padding: 48px;
+    @include small {
+      font-size: 0.9rem;
+    }
   }
 
-  &:hover {
-    box-shadow: $box-shadow;
+  &:hover .base-card__title {
+    text-shadow: $box-shadow;
+    opacity: 1;
   }
 }
 </style>
