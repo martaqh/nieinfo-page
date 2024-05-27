@@ -50,6 +50,7 @@ const componentVariant = computed(() => {
   color: inherit;
   border: 2px solid $color-accent;
   border-radius: $border-radius;
+  text-transform: uppercase;
 
   @include medium {
     font-size: 1rem;

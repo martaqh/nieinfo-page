@@ -52,7 +52,7 @@ const isEven = computed(() => {
 
 <style lang="scss" scoped>
 .bonus-display {
-  margin: 80px;
+  margin: 160px 80px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -61,13 +61,13 @@ const isEven = computed(() => {
 
   @include medium {
     gap: 48px;
-    margin: 64px 0;
+    margin: 120px 0;
   }
 
   @include small {
     flex-direction: column;
     gap: 24px;
-    margin: 32px 0;
+    margin: 120px 0;
   }
 
   &__image {

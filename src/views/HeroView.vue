@@ -50,8 +50,11 @@ onMounted(() => {
   display: flex;
   justify-content: space-between;
   font-weight: $font-weight-main;
-
   padding-left: 48px;
+
+  @include large {
+    padding-right: 48px;
+  }
 
   @include medium {
     padding-left: 0;
@@ -103,6 +106,10 @@ onMounted(() => {
     max-height: 50%;
     min-width: 376px;
 
+    @include large {
+      width: 376px;
+    }
+
     @include medium {
       width: 376px;
     }
@@ -152,8 +159,8 @@ onMounted(() => {
         top: 130px;
 
         @include large {
-          left: 340px;
-          top: 50px;
+          left: 250px;
+          top: 10px;
         }
 
         @include medium {
@@ -186,8 +193,8 @@ onMounted(() => {
         top: 220px;
 
         @include large {
-          left: 400px;
-          top: 150px;
+          left: 320px;
+          top: 100px;
         }
 
         @include medium {

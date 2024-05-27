@@ -17,6 +17,7 @@ import BonusesView from '@/views/BonusesView.vue'
     <TheHeader />
     <BaseContainer>
       <HeroView />
+      <BaseDivider />
       <BonusesView />
       <BaseDivider reverse />
       <AboutView />
