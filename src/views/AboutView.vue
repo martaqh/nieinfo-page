@@ -12,14 +12,15 @@ interface Fact {
   text: string
 }
 
-interface Value {
+interface LifeValue {
   orderNumber: number
   name: string
   description: string
+  iconName: string
 }
 
 const facts = ref<Fact[]>([])
-const values = ref<Value[]>([])
+const lifeValues = ref<LifeValue[]>([])
 
 const about = ref()
 
@@ -33,7 +34,7 @@ async function fetchFacts() {
 
 async function fetchValues() {
   try {
-    values.value = await getValues()
+    lifeValues.value = await getValues()
   } catch (error) {
     console.error('Error fetching posts:', error)
   }
@@ -42,7 +43,6 @@ async function fetchValues() {
 async function fetchAboutData() {
   try {
     about.value = await getAboutData()
-    console.log(about.value)
   } catch (error) {
     console.error('Error fetching posts:', error)
   }
@@ -53,7 +53,9 @@ const sortedFacts = computed(() => {
 })
 
 const sortedValues = computed(() => {
-  return values.value?.slice().sort((a: Value, b: Value) => a.orderNumber - b.orderNumber)
+  return lifeValues.value
+    ?.slice()
+    .sort((a: LifeValue, b: LifeValue) => a.orderNumber - b.orderNumber)
 })
 
 onMounted(() => {
@@ -83,7 +85,12 @@ onMounted(() => {
       <SectionTitle class="about__knowledge-sharing__heading">{{
         about?.knowledgeSharingHeading
       }}</SectionTitle>
-      <p class="about__knowledge-sharing__text">{{ about?.knowledgeSharingDescription }}</p>
+      <div class="about__knowledge-sharing__content">
+        <img class="about__knowledge-sharing__content--picture" src="@/assets/sgh4.jpg" />
+        <p class="about__knowledge-sharing__content--text">
+          {{ about?.knowledgeSharingDescription }}
+        </p>
+      </div>
     </section>
     <section class="about__values">
       <SectionTitle class="about__values__heading">
@@ -95,6 +102,7 @@ onMounted(() => {
           :key="value.orderNumber"
           :title="value.name"
           :text="value.description"
+          :icon-name="value.iconName"
         />
       </div>
     </section>
@@ -148,7 +156,7 @@ onMounted(() => {
   &__knowledge-sharing {
     font-size: 1.2rem;
     display: flex;
-    gap: 180px;
+    gap: 80px;
 
     @include medium {
       gap: 64px;
@@ -159,13 +167,29 @@ onMounted(() => {
       flex-direction: column;
     }
 
-    &__text {
-      @include medium {
-        font-size: 1rem;
+    &__content {
+      &--text {
+        @include medium {
+          font-size: 1rem;
+        }
+
+        @include small {
+          font-size: 0.9rem;
+        }
+      }
+      &--picture {
+        max-width: 300px;
+        overflow: hidden;
+        float: left;
+        margin: 8px 16px 8px 0;
+        filter: sepia(1) saturate(5) hue-rotate(160deg) brightness(0.9);
+        border-radius: $border-radius;
       }
 
       @include small {
-        font-size: 0.9rem;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
       }
     }
   }
@@ -189,7 +213,6 @@ onMounted(() => {
     }
 
     &__cards-list {
-      // padding: 0 48px;
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       grid-template-rows: repeat(2, 1fr);
