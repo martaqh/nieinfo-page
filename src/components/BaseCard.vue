@@ -2,6 +2,7 @@
 interface Props {
   title: string
   text: string
+  iconName: string
 }
 
 defineProps<Props>()
@@ -9,36 +10,56 @@ defineProps<Props>()
 
 <template>
   <div class="base-card">
-    <span class="base-card__title">{{ title }}</span>
+    <div class="base-card__title">
+      <span class="base-card__title-icon material-symbols-outlined">{{ iconName }}</span>
+      <span class="base-card__title-wording">{{ title }}</span>
+    </div>
+
     <p class="base-card__text">{{ text }}</p>
   </div>
 </template>
 
 <style lang="scss">
 .base-card {
-  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
   border-radius: $border-radius;
   border-top-left-radius: -1.25rem;
   padding: 8px;
   transition: opacity 1s ease-out 100ms;
 
   &__title {
+    display: flex;
+    align-items: center;
     border-radius: $border-radius;
     text-transform: uppercase;
     background-color: inherit;
     color: $color-accent;
     font-weight: 700;
     font-family: $font-title;
-    font-size: 3rem;
-    opacity: 0.2;
+    font-size: 1.8rem;
+    opacity: 0.7;
 
     @include medium {
-      font-size: 2.2rem;
+      font-size: 1.5rem;
     }
 
     @include small {
+      font-size: 1.2rem;
+    }
+
+    &-icon {
+      margin-right: 16px;
       font-size: 2rem;
-      opacity: 0.3;
+
+      @include medium {
+        font-size: 1.8rem;
+      }
+
+      @include small {
+        font-size: 1.5rem;
+      }
     }
   }
 
