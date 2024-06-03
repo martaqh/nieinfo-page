@@ -24,7 +24,6 @@ const sortedBonuses = computed(() => {
 
 onMounted(() => {
   fetchBonuses()
-  console.log(sortedBonuses.value)
 })
 </script>
 
@@ -33,12 +32,12 @@ onMounted(() => {
     <ProductDisplay
       v-for="bonus of sortedBonuses"
       :key="bonus.number"
-      :orderNumber="bonus.number"
+      :number="bonus.number"
       :total-bonuses="bonuses.length"
       :title="bonus.title"
       :learning-stage="bonus.learningStage"
       :button-label="bonus.buttonLabel"
-      :image-url="bonus.image"
+      :image="bonus.image"
       :description="bonus.description"
       :product-url="bonus.productUrl"
     >

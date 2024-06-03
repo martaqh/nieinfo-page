@@ -15,7 +15,6 @@ const courses: Ref<Product[]> = ref([])
 async function fetchBonuses() {
   try {
     courses.value = await getCourses()
-    console.log(courses.value)
   } catch (error) {
     console.error('Error fetching posts:', error)
   }
@@ -36,12 +35,12 @@ onMounted(() => {
     <ProductDisplay
       v-for="course of sortedCourses"
       :key="course.number"
-      :orderNumber="course.number"
+      :number="course.number"
       :total-bonuses="courses.length"
       :title="course.title"
       :learning-stage="course.learningStage"
       :button-label="course.buttonLabel"
-      :image-url="course.image"
+      :image="course.image"
       :description="course.description"
       :product-url="course.productUrl"
     >

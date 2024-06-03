@@ -29,6 +29,10 @@ defineProps<Props>()
   padding: 8px;
   transition: opacity 1s ease-out 100ms;
 
+  @include small {
+    padding: 8px 0;
+  }
+
   &__title {
     display: flex;
     align-items: center;

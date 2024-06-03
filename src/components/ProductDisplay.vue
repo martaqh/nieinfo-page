@@ -22,16 +22,16 @@ function urlFor(source: string) {
 }
 
 const isEven = computed(() => {
-  return props.orderNumber % 2 === 0
+  return props.number % 2 === 0
 })
 </script>
 
 <template>
   <div class="bonus-display" :class="{ reverse: isEven }">
-    <img class="bonus-display__image" :src="urlFor(imageUrl).url()" />
+    <img class="bonus-display__image" :src="urlFor(image).url()" />
     <div class="bonus-display__text">
       <div class="bonus-display__text__level">
-        <ProgressCircle :max-value="props.totalBonuses" :current-value="props.orderNumber" />
+        <ProgressCircle :max-value="props.totalBonuses" :current-value="props.number" />
         <h6>{{ learningStage }}</h6>
       </div>
 
