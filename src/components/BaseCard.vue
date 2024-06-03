@@ -2,7 +2,7 @@
 interface Props {
   title: string
   text: string
-  iconName: string
+  iconName?: string
 }
 
 defineProps<Props>()
@@ -14,7 +14,7 @@ defineProps<Props>()
       <span class="base-card__title-icon material-symbols-outlined">{{ iconName }}</span>
       <span class="base-card__title-wording">{{ title }}</span>
     </div>
-
+    <slot />
     <p class="base-card__text">{{ text }}</p>
   </div>
 </template>

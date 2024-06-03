@@ -4,17 +4,11 @@ import BaseButton from '@/components/BaseButton.vue'
 import ProgressCircle from '@/components/ProgressCircle.vue'
 import imageUrlBuilder from '@sanity/image-url'
 import { client } from '@/sanity/sanityClient'
+import type { Product } from '@/types.ts'
 
-interface Props {
-  number: number
+interface Props extends Product {
   totalBonuses: number
   reverse?: boolean
-  title: string
-  learningStage: string
-  buttonLabel: string
-  imageUrl: any
-  bonusUrl: string
-  description: string
 }
 
 const props = withDefaults(defineProps<Props>(), {
@@ -28,7 +22,7 @@ function urlFor(source: string) {
 }
 
 const isEven = computed(() => {
-  return props.number % 2 === 0
+  return props.orderNumber % 2 === 0
 })
 </script>
 
@@ -37,7 +31,7 @@ const isEven = computed(() => {
     <img class="bonus-display__image" :src="urlFor(imageUrl).url()" />
     <div class="bonus-display__text">
       <div class="bonus-display__text__level">
-        <ProgressCircle :max-value="props.totalBonuses" :current-value="props.number" />
+        <ProgressCircle :max-value="props.totalBonuses" :current-value="props.orderNumber" />
         <h6>{{ learningStage }}</h6>
       </div>
 
@@ -45,7 +39,7 @@ const isEven = computed(() => {
       <p>
         {{ description }}
       </p>
-      <BaseButton :href="bonusUrl">{{ buttonLabel }}</BaseButton>
+      <BaseButton :href="productUrl">{{ buttonLabel }}</BaseButton>
     </div>
   </div>
 </template>
@@ -78,7 +72,7 @@ const isEven = computed(() => {
     overflow: hidden;
 
     @include medium {
-      min-width: 350px;
+      width: 60%;
     }
 
     @include small {

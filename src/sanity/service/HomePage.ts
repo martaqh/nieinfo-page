@@ -6,6 +6,11 @@ export async function getHeroData() {
 }
 
 export async function getBonuses() {
-  const bonuses = await client.fetch('*[_type == "bonus"]')
+  const bonuses = await client.fetch('*[_type == "product" && category == "bonus"]')
+  return bonuses
+}
+
+export async function getCourses() {
+  const bonuses = await client.fetch('*[_type == "product" && category == "course"]')
   return bonuses
 }
