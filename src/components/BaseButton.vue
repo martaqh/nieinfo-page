@@ -8,6 +8,7 @@ interface Props {
   href?: string
   social?: boolean
   plain?: boolean
+  disabled?: boolean
   type?: Type
 }
 
@@ -31,7 +32,7 @@ const componentVariant = computed(() => {
     :href="href || to"
     :to="to"
     :type="componentVariant === 'button' && props.type"
-    :class="{ social: social, plain: plain }"
+    :class="{ social: social, plain: plain, disabled: disabled }"
   >
     <div class="base-button__slot">
       <slot> </slot>
@@ -86,6 +87,17 @@ const componentVariant = computed(() => {
     background: inherit;
     border: none;
     padding: 0;
+  }
+
+  &.disabled {
+    background-color: $color-text-light;
+    border: none;
+
+    &:hover {
+      box-shadow: none;
+      cursor: not-allowed;
+      outline: none;
+    }
   }
 
   &__slot {
