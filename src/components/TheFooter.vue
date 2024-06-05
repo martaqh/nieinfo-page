@@ -6,7 +6,7 @@ import SocialLinks from '@/components/SocialLinks.vue'
 
 <template>
   <footer class="footer">
-    <BaseDivider reverse />
+    <BaseDivider />
     <div class="footer__content">
       <span>kontakt@nieinformatyk.pl</span>
       <SocialLinks />

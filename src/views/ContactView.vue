@@ -3,9 +3,11 @@ import { ref, computed } from 'vue'
 import SectionTitle from '@/components/SectionTitle.vue'
 import BaseButton from '@/components/BaseButton.vue'
 
-const inputTouched = ref(false)
+const emailTouched = ref(false)
+const textareaTouched = ref(false)
 const submitClicked = ref(false)
 const userEmail = ref('')
+const userMessage = ref('')
 
 const isEmailValid = (input: string) => {
   return /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
@@ -14,11 +16,19 @@ const isEmailValid = (input: string) => {
 }
 
 const invalidEmail = computed(() => {
-  return inputTouched.value && !isEmailValid(userEmail.value)
+  return emailTouched.value && !isEmailValid(userEmail.value)
+})
+
+const missingMessage = computed(() => {
+  return userMessage.value.length === 0 && textareaTouched.value
 })
 
 const messageSent = computed(() => {
   return isEmailValid(userEmail.value) && submitClicked.value
+})
+
+const isFormValid = computed(() => {
+  return emailTouched.value || !invalidEmail.value || textareaTouched.value || !missingMessage.value
 })
 
 const handleSubmit = () => {
@@ -51,7 +61,7 @@ const handleSubmit = () => {
           name="email"
           placeholder="Wpisz swój adres e-mail"
           v-model="userEmail"
-          @blur="inputTouched = true"
+          @blur="emailTouched = true"
           :class="{ invalid: invalidEmail }"
           required
         />
@@ -65,16 +75,16 @@ const handleSubmit = () => {
           name="message"
           rows="10"
           cols="50"
+          v-model="userMessage"
           placeholder="Tu napisz swoją wiadomość..."
+          @blur="textareaTouched = true"
+          :class="{ invalid: missingMessage }"
+          required
         ></textarea>
+        <p v-if="missingMessage">Napisz choć kilka słów ;)</p>
       </div>
 
-      <BaseButton
-        type="submit"
-        context="form"
-        @click="handleSubmit()"
-        :disabled="!inputTouched || invalidEmail"
-      >
+      <BaseButton type="submit" context="form" @click="handleSubmit()" :disabled="!isFormValid">
         Wyślij
       </BaseButton>
     </form>
