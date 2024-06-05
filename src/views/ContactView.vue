@@ -33,7 +33,7 @@ const handleSubmit = () => {
 
     <form
       class="contact-view__form"
-      action="https://formsubmit.co/2f9079899edc929c8215d823594a41e6"
+      action="https://formsubmit.co/kontakt@nieinformatyk.pl"
       method="post"
       novalidate
       @submit.prevent="handleSubmit"
