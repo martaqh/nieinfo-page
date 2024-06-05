@@ -32,6 +32,7 @@ const componentVariant = computed(() => {
     :href="href || to"
     :to="to"
     :type="componentVariant === 'button' && props.type"
+    :target="componentVariant === 'a' && '_blank'"
     :class="{ social: social, plain: plain, disabled: disabled }"
   >
     <div class="base-button__slot">
