@@ -14,6 +14,12 @@ const router = createRouter({
       name: 'Message Sent',
       component: () => import('@/pages/MessageSentPage.vue'),
       props: true
+    },
+    {
+      path: '/about',
+      name: 'About Page',
+      component: () => import('@/views/AboutView.vue'),
+      props: true
     }
   ]
 })
