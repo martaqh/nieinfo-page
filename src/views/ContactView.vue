@@ -1,13 +1,15 @@
 <script setup lang="ts">
-import { ref, computed } from 'vue'
+import { ref, computed, onMounted } from 'vue'
 import SectionTitle from '@/components/SectionTitle.vue'
 import BaseButton from '@/components/BaseButton.vue'
 
 const emailTouched = ref(false)
 const textareaTouched = ref(false)
-const submitClicked = ref(false)
+
 const userEmail = ref('')
 const userMessage = ref('')
+
+const isSubmitted = ref(false)
 
 const isEmailValid = (input: string) => {
   return /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
@@ -23,31 +25,49 @@ const missingMessage = computed(() => {
   return userMessage.value.length === 0 && textareaTouched.value
 })
 
-const messageSent = computed(() => {
-  return isEmailValid(userEmail.value) && submitClicked.value
-})
-
 const isFormValid = computed(() => {
-  return emailTouched.value || !invalidEmail.value || textareaTouched.value || !missingMessage.value
+  return !invalidEmail.value && !missingMessage.value
 })
 
-const handleSubmit = () => {
-  submitClicked.value = true
-  !isEmailValid(userEmail.value) ? (submitClicked.value = false) : null
+const isButtonDisabled = computed(() => {
+  return userMessage.value.length === 0 || !userEmail.value
+})
+
+const messageSentPageUrl = computed(() => {
+  return window.location.href + 'message-sent'
+})
+
+const handleSubmit = (event: Event) => {
+  if (isFormValid.value) {
+    isSubmitted.value = true
+    return true
+  } else {
+    event.preventDefault()
+    return false
+  }
 }
+
+onMounted(() => {
+  isSubmitted.value = false
+})
 </script>
 
 <template>
   <section class="contact-view" id="contact">
-    <SectionTitle class="contact-view__title">Napisz do mnie</SectionTitle>
+    <SectionTitle class="contact-view__title">
+      <span v-show="!isSubmitted"> Napisz do mnie </span>
+      <span class="contact-view__sending-message" v-show="isSubmitted">
+        Wiadomość w trakcie wysyłania...
+      </span>
+    </SectionTitle>
 
     <form
       class="contact-view__form"
       action="https://formsubmit.co/kontakt@nieinformatyk.pl"
       method="post"
       novalidate
-      @submit.prevent="handleSubmit"
-      v-if="!messageSent"
+      @submit="handleSubmit"
+      v-show="!isSubmitted"
     >
       <div class="contact-view__form-item">
         <label for="name">Imię:</label>
@@ -84,11 +104,11 @@ const handleSubmit = () => {
         <p v-if="missingMessage">Napisz choć kilka słów ;)</p>
       </div>
 
-      <BaseButton type="submit" context="form" @click="handleSubmit()" :disabled="!isFormValid">
-        Wyślij
-      </BaseButton>
+      <BaseButton type="submit" context="form" :disabled="isButtonDisabled"> Wyślij </BaseButton>
+
+      <input type="hidden" name="_captcha" value="false" />
+      <input type="hidden" name="_next" :value="messageSentPageUrl" />
     </form>
-    <h6 v-if="messageSent">Dzięki za wiadomość! Niebawem ją odczytam.</h6>
   </section>
 </template>
 

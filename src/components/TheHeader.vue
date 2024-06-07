@@ -49,7 +49,7 @@ onMounted(() => {
 
 <template>
   <header class="header">
-    <NavLink class="header__logo" href="#">
+    <NavLink class="header__logo" to="/" href="#">
       <img src="/src/assets/logo.svg" />
     </NavLink>
 
