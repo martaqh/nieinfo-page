@@ -65,7 +65,7 @@ onMounted(() => {
 
     <form
       class="contact-view__form"
-      action="https://formsubmit.co/kontakt@nieinformatyk.pl"
+      action="https://formsubmit.co/2074c4ea55bfa61b185bad7a0462661a"
       method="post"
       novalidate
       @submit="handleSubmit"
