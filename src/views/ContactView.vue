@@ -37,6 +37,8 @@ const messageSentPageUrl = computed(() => {
   return window.location.href + 'message-sent'
 })
 
+console.log(messageSentPageUrl.value)
+
 const handleSubmit = (event: Event) => {
   if (isFormValid.value) {
     isSubmitted.value = true
