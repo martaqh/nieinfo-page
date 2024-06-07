@@ -42,6 +42,14 @@ const closeModal = () => {
   }
 }
 
+const handleLogoClick = () => {
+  if (window.location.pathname === '/' || window.location.pathname === '/index.html') {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  } else {
+    window.location.href = '/'
+  }
+}
+
 onMounted(() => {
   fetchNavLinks()
 })
@@ -49,7 +57,7 @@ onMounted(() => {
 
 <template>
   <header class="header">
-    <NavLink class="header__logo" to="/" href="#">
+    <NavLink class="header__logo" @click="handleLogoClick">
       <img src="/src/assets/logo.svg" />
     </NavLink>
 
