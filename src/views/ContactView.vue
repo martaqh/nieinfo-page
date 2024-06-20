@@ -149,6 +149,8 @@ onMounted(() => {
         background: $color-background;
         border: 1px solid $color-accent;
         border-radius: $border-radius;
+        font-family: $font-main;
+        font-weight: 400;
 
         &:hover {
           outline: 2px solid $color-accent;
