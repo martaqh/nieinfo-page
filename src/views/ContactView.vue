@@ -65,7 +65,7 @@ onMounted(() => {
 
     <form
       class="contact-view__form"
-      action="https://formsubmit.co/2074c4ea55bfa61b185bad7a0462661a"
+      action="https://formsubmit.co/b93e9e71c73f7d9ac5d69e8e0f033eb0"
       method="post"
       novalidate
       @submit="handleSubmit"
