@@ -52,6 +52,7 @@ nav {
   display: flex;
   align-items: center;
   gap: 12px;
+  margin: 0 12px;
 
   img {
     width: 24px;

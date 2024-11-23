@@ -183,7 +183,7 @@ onMounted(() => {
         float: left;
         margin: 8px 16px 8px 0;
         filter: sepia(1) saturate(5) hue-rotate(160deg) brightness(0.9);
-        border-radius: $border-radius;
+        border-radius: 60px 0;
 
         @include small {
           max-width: 100%;

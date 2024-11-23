@@ -73,7 +73,7 @@ const componentVariant = computed(() => {
     text-align: center;
   }
   &.social {
-    padding: 12px;
+    padding: 0 12px;
     background-color: inherit;
     width: 24px;
     height: 24px;

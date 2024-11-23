@@ -21,7 +21,7 @@ const isLink = computed(() => {
   <div class="fact-item">
     <span :class="iconClass">{{ props.icon }}</span>
     <div class="fact-item__text">
-      <a v-if="isLink" href="http://youtube.com/nieinformatyk">{{ text }}</a>
+      <a v-if="isLink" href="http://youtube.com/nieinformatyk" target="_blank">{{ text }}</a>
       <p v-else>{{ text }}</p>
 
       <slot />
@@ -31,7 +31,7 @@ const isLink = computed(() => {
 
 <style lang="scss">
 .fact-item {
-  padding: 24px 0;
+  padding: 12px 0;
   font-size: 1.1rem;
   display: flex;
   align-items: center;
