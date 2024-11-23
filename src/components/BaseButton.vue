@@ -63,6 +63,7 @@ const componentVariant = computed(() => {
   }
 
   &:hover {
+    filter: saturate(150%);
     outline: 2px solid $color-accent;
     box-shadow: $box-shadow;
     cursor: pointer;
